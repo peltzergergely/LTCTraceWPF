@@ -54,6 +54,62 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="CalibWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EolHipotWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FbEmcWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FbKaptWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FbThtWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FinalAssy1Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FinalAssy2Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FirewallWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GwThtWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Hipot1Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HousingConnectorAssyWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HousingLeakTestWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HsPreAssyWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LeakTest2Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -62,12 +118,82 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="CalibWindow.xaml.cs">
+      <DependentUpon>CalibWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EolHipotWindow.xaml.cs">
+      <DependentUpon>EolHipotWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FbEmcWindow.xaml.cs">
+      <DependentUpon>FbEmcWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FbKaptWindow.xaml.cs">
+      <DependentUpon>FbKaptWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FbThtWindow.xaml.cs">
+      <DependentUpon>FbThtWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FinalAssy1Window.xaml.cs">
+      <DependentUpon>FinalAssy1Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FinalAssy2Window.xaml.cs">
+      <DependentUpon>FinalAssy2Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FirewallWindow.xaml.cs">
+      <DependentUpon>FirewallWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GwThtWindow.xaml.cs">
+      <DependentUpon>GwThtWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hipot1Window.xaml.cs">
+      <DependentUpon>Hipot1Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HousingConnectorAssyWindow.xaml.cs">
+      <DependentUpon>HousingConnectorAssyWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HousingLeakTestWindow.xaml.cs">
+      <DependentUpon>HousingLeakTestWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HsPreAssyWindow.xaml.cs">
+      <DependentUpon>HsPreAssyWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LeakTest2Window.xaml.cs">
+      <DependentUpon>LeakTest2Window.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MbHsAssyWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MbReworkWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MbThtWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PottingWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MbHsAssyWindow.xaml.cs">
+      <DependentUpon>MbHsAssyWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MbReworkWindow.xaml.cs">
+      <DependentUpon>MbReworkWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MbThtWindow.xaml.cs">
+      <DependentUpon>MbThtWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PottingWindow.xaml.cs">
+      <DependentUpon>PottingWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
