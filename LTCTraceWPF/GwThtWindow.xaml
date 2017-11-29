@@ -19,19 +19,19 @@
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="700" />
+                    <ColumnDefinition Width="700" />
                 </Grid.ColumnDefinitions>
 
                 <TextBlock Grid.Row="0" Grid.Column="0" FontSize="35" HorizontalAlignment="Right" Margin="30,15" Width="500" TextAlignment="Right">Gateway DataMátrix</TextBlock>
-                <TextBlock Grid.Row="1" Grid.Column="0" FontSize="35" HorizontalAlignment="Right" Margin="30,15">Kapton fénykép</TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="0" FontSize="35" HorizontalAlignment="Right" Margin="30,15">Rework jegyzetek</TextBlock>
 
-                <TextBox Grid.Row="0" Grid.Column="1" FontSize="35" Margin="30,15" Width="500"></TextBox>
-                <TextBlock Grid.Row="1" Grid.Column="1" FontSize="35" HorizontalAlignment="Left" Margin="30,15">Fotó</TextBlock>
+                <TextBox Grid.Row="0" Grid.Column="1" FontSize="35" Margin="30,15" ></TextBox>
+                <TextBox Grid.Row="1" Grid.Column="1" FontSize="35" Margin="30,15"  MinLines="3" TextWrapping="Wrap" AcceptsReturn="True"></TextBox>
             </Grid>
         </StackPanel>
 
-        <Button x:Name="MainMenuBtn" HorizontalAlignment="Left" Margin="40" VerticalAlignment="Bottom" Height="auto" Width="auto" Click="MainMenuBtn_Click" Background="#FDFDFD" BorderBrush="White" Foreground="DarkSlateGray">
+        <Button x:Name="MainMenuBtn" HorizontalAlignment="Left" Margin="40" VerticalAlignment="Bottom" Height="auto" Width="auto" Click="MainMenuBtn_Click" Background="#FDFDFD" BorderBrush="White" Foreground="DarkSlateGray" KeyboardNavigation.IsTabStop="False">
             <StackPanel Orientation="Horizontal">
                 <TextBlock VerticalAlignment="Center" Margin="5" HorizontalAlignment="Left" FontFamily="Segoe MDL2 Assets" FontSize="48" Padding="2" >&#xE8FC;</TextBlock>
                 <TextBlock VerticalAlignment="Center" FontSize="25" Padding="2">Főmenü</TextBlock>

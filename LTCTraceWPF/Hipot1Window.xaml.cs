@@ -21,6 +21,8 @@ namespace LTCTraceWPF
     {
         public Hipot1Window()
         {
+            Loaded += (sender, e) => MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
+
             InitializeComponent();
         }
 

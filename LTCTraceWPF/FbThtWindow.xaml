@@ -37,27 +37,27 @@
                     <TextBlock Grid.Row="5" Grid.Column="0" FontSize="35" HorizontalAlignment="Right" Margin="30,15">Kapton mit?</TextBlock>
                     <TextBlock Grid.Row="6" Grid.Column="0" FontSize="35" HorizontalAlignment="Right" Margin="30,15">Rework Jegyzetek</TextBlock>
                     <TextBlock Grid.Row="7" Grid.Column="0" FontSize="35" HorizontalAlignment="Right" Margin="30,15">THT ragasztás, ha nincs rework?</TextBlock>
-                    
-                    <TextBlock Grid.Row="0" Grid.Column="1" FontSize="35" HorizontalAlignment="left" Margin="30,15">Dátum input</TextBlock>
-                    <TextBlock Grid.Row="1" Grid.Column="1" FontSize="35" HorizontalAlignment="left" Margin="30,15">Fényképező</TextBlock>
-                    <TextBlock Grid.Row="2" Grid.Column="1" FontSize="35" HorizontalAlignment="left" Margin="30,15">DM Szkennelés (első?)</TextBlock>
-                    <CheckBox Grid.Row="3" Grid.Column="1" HorizontalAlignment="left" Margin="30,15">
+
+                <TextBlock Grid.Row="0" Grid.Column="1" FontSize="35" HorizontalAlignment="left" Margin="30,15" KeyboardNavigation.TabIndex="0" >Dátum input</TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="1" FontSize="35" HorizontalAlignment="left" Margin="30,15" KeyboardNavigation.TabIndex="1" >Fényképező</TextBlock>
+                <TextBlock Grid.Row="2" Grid.Column="1" FontSize="35" HorizontalAlignment="left" Margin="30,15" KeyboardNavigation.TabIndex="2" >DM Szkennelés (első?)</TextBlock>
+                <CheckBox Grid.Row="3" Grid.Column="1" HorizontalAlignment="left" Margin="30,15" KeyboardNavigation.TabIndex="3" >
                         <CheckBox.LayoutTransform>
                             <ScaleTransform ScaleX="2.5" ScaleY="2.5"></ScaleTransform>
                         </CheckBox.LayoutTransform>
                     </CheckBox>
-                    <CheckBox Grid.Row="4" Grid.Column="1" HorizontalAlignment="left" Margin="30,15">
+                <CheckBox Grid.Row="4" Grid.Column="1" HorizontalAlignment="left" Margin="30,15" KeyboardNavigation.TabIndex="4" >
                         <CheckBox.LayoutTransform>
                             <ScaleTransform ScaleX="2.5" ScaleY="2.5"></ScaleTransform>
                         </CheckBox.LayoutTransform>
                     </CheckBox>
-                    <CheckBox Grid.Row="5" Grid.Column="1" HorizontalAlignment="left" Margin="30,15">
+                <CheckBox Grid.Row="5" Grid.Column="1" HorizontalAlignment="left" Margin="30,15" KeyboardNavigation.TabIndex="5" >
                         <CheckBox.LayoutTransform>
                             <ScaleTransform ScaleX="2.5" ScaleY="2.5"></ScaleTransform>
                         </CheckBox.LayoutTransform>
                     </CheckBox>
-                    <TextBox Grid.Row="6" Grid.Column="1" FontSize="35" Margin="30,15"></TextBox>
-                    <CheckBox Grid.Row="7" Grid.Column="1" HorizontalAlignment="left" Margin="30,15">
+                <TextBox Grid.Row="6" Grid.Column="1" FontSize="35" Margin="30,15" MinLines="3" TextWrapping="Wrap" AcceptsReturn="True" KeyboardNavigation.TabIndex="6" ></TextBox>
+                <CheckBox Grid.Row="7" Grid.Column="1" HorizontalAlignment="left" Margin="30,15" KeyboardNavigation.TabIndex="7" >
                         <CheckBox.LayoutTransform>
                             <ScaleTransform ScaleX="2.3" ScaleY="2.3"></ScaleTransform>
                         </CheckBox.LayoutTransform>
@@ -65,13 +65,13 @@
                 </Grid>
             </StackPanel>
         
-        <Button HorizontalAlignment="Left" Margin="40" VerticalAlignment="Bottom" Height="auto" Width="auto" Click="MainMenuBtn_Click_" Background="#FDFDFD" BorderBrush="White" Foreground="DarkSlateGray">
+        <Button HorizontalAlignment="Left" Margin="40" VerticalAlignment="Bottom" Height="auto" Width="auto" Click="MainMenuBtn_Click_" Background="#FDFDFD" BorderBrush="White" Foreground="DarkSlateGray" KeyboardNavigation.IsTabStop="False">
             <StackPanel x:Name="MainMenuBtn" Orientation="Horizontal">
                 <TextBlock VerticalAlignment="Center" Margin="5" HorizontalAlignment="Left" FontFamily="Segoe MDL2 Assets" FontSize="48" Padding="2" >&#xE8FC;</TextBlock>
                 <TextBlock VerticalAlignment="Center" FontSize="25" Padding="2">Főmenü</TextBlock>
             </StackPanel>
         </Button>
-        <Button x:Name="SaveBtn" HorizontalAlignment="Right" Margin="40" VerticalAlignment="Bottom" Height="auto" Width="auto" Background="#FDFDFD" BorderBrush="White" Foreground="DarkSlateGray">
+        <Button x:Name="SaveBtn" HorizontalAlignment="Right" Margin="40" VerticalAlignment="Bottom" Height="auto" Width="auto" Background="#FDFDFD" BorderBrush="White" Foreground="DarkSlateGray" KeyboardNavigation.TabIndex="8" >
             <StackPanel Orientation="Horizontal">
                 <TextBlock VerticalAlignment="Center" Margin="5" HorizontalAlignment="Left" FontFamily="Segoe MDL2 Assets" FontSize="48" Padding="2" >&#xE74E;</TextBlock>
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="25" Padding="2">Mentés</TextBlock>

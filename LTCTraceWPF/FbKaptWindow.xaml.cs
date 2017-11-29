@@ -21,6 +21,8 @@ namespace LTCTraceWPF
     {
         public FbKaptWindow()
         {
+            Loaded += (sender, e) => MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
+
             InitializeComponent();
         }
 

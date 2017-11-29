@@ -11,8 +11,8 @@
             <Label Content="Filterboard EMC Összeszerelés" Padding="10" FontSize="25" Background="#00363a" Foreground="white" />
             <Label Content="Tölsd ki az alábbi mezőket!" HorizontalContentAlignment="Center" Padding="30" FontSize="35" Background="#006064" Foreground="white"/>
         </StackPanel>
-        
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" >
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
@@ -32,7 +32,7 @@
                 <TextBlock Grid.Row="3" Grid.Column="0" FontSize="35" HorizontalAlignment="Right" Margin="30,15">Filterboard + EMC Izolátor</TextBlock>
                 <TextBlock Grid.Row="4" Grid.Column="0" FontSize="35" HorizontalAlignment="Right" Margin="30,15">Csavarhúzó adat</TextBlock>
 
-                <TextBox Grid.Row="0" Grid.Column="1" FontSize="35" Margin="30,15" ></TextBox>
+                <TextBox x:Name="FbDmTb" Grid.Row="0" Grid.Column="1" FontSize="35" Margin="30,15" ></TextBox>
                 <CheckBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="left" Margin="30,15">
                     <CheckBox.LayoutTransform>
                         <ScaleTransform ScaleX="2.5" ScaleY="2.5"></ScaleTransform>
@@ -51,8 +51,8 @@
                 </CheckBox>
             </Grid>
         </StackPanel>
-    
-        <Button x:Name="MainMenuBtn" HorizontalAlignment="Left" Margin="40" VerticalAlignment="Bottom" Height="auto" Width="auto" Click="MainMenuBtn_Click" Background="#FDFDFD" BorderBrush="White" Foreground="DarkSlateGray">
+
+        <Button x:Name="MainMenuBtn" HorizontalAlignment="Left" Margin="40" VerticalAlignment="Bottom" Height="auto" Width="auto" Click="MainMenuBtn_Click" Background="#FDFDFD" BorderBrush="White" Foreground="DarkSlateGray" KeyboardNavigation.IsTabStop="False">
             <StackPanel Orientation="Horizontal">
                 <TextBlock VerticalAlignment="Center" Margin="5" HorizontalAlignment="Left" FontFamily="Segoe MDL2 Assets" FontSize="48" Padding="2" >&#xE8FC;</TextBlock>
                 <TextBlock VerticalAlignment="Center" FontSize="25" Padding="2">Főmenü</TextBlock>

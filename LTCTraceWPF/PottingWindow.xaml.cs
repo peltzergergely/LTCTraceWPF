@@ -21,6 +21,7 @@ namespace LTCTraceWPF
     {
         public PottingWindow()
         {
+            Loaded += (sender, e) => MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
             InitializeComponent();
         }
 
