@@ -21,6 +21,8 @@ namespace LTCTraceWPF
     {
         public MbThtWindow()
         {
+            Loaded += (sender, e) => MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
+
             InitializeComponent();
         }
 

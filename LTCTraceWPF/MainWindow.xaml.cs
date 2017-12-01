@@ -136,5 +136,11 @@ namespace LTCTraceWPF
             var FirewallWindow = new FirewallWindow();
             FirewallWindow.Show();
         }
+
+        private void DbBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var DbWindow = new DbWindow();
+            DbWindow.Show();
+        }
     }
 }

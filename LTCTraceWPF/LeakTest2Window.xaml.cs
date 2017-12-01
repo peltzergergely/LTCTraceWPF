@@ -21,6 +21,8 @@ namespace LTCTraceWPF
     {
         public LeakTest2Window()
         {
+            Loaded += (sender, e) => MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
+
             InitializeComponent();
         }
 

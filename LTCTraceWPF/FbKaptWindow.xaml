@@ -27,7 +27,7 @@
                 <TextBlock Grid.Row="1" Grid.Column="0" FontSize="35" HorizontalAlignment="Right" Margin="30,15">Kapton fénykép</TextBlock>
 
                 <TextBox Grid.Row="0" Grid.Column="1" FontSize="35" Margin="30,15" ></TextBox>
-                <TextBlock Grid.Row="1" Grid.Column="1" FontSize="35" HorizontalAlignment="Left" Margin="30,15">Fotó</TextBlock>
+                <Button x:Name="CamBtn" Grid.Row="1" Grid.Column="1" FontSize="35" HorizontalAlignment="Left" Margin="30,15" Click="CamBtn_Click">Fotó készítése</Button>
             </Grid>
         </StackPanel>
 
