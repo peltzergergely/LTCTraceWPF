@@ -12,6 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+using Microsoft.Expression.Encoder.Devices;
+using System.Collections.ObjectModel;
+
+
 namespace LTCTraceWPF
 {
     /// <summary>
@@ -67,6 +71,11 @@ namespace LTCTraceWPF
         {
             // Take snapshot of webcam video.
             WebcamViewer.TakeSnapshot();
+        }
+
+        private void MainMenuBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
