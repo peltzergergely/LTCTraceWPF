@@ -30,5 +30,26 @@ namespace LTCTraceWPF
         {
             this.Close();
         }
+        private void FocusNext(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Tab)
+            {
+                e.Handled = true;
+                return;
+            }
+
+            if (e.Key == Key.Enter)
+            {
+                TraversalRequest tRequest = new TraversalRequest(FocusNavigationDirection.Next);
+                UIElement keyboardFocus = Keyboard.FocusedElement as UIElement;
+
+                if (keyboardFocus != null)
+                {
+                    keyboardFocus.MoveFocus(tRequest);
+                }
+
+                e.Handled = true;
+            }
+        }
     }
 }

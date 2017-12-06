@@ -38,23 +38,23 @@
                 <TextBlock Grid.Row="6" Grid.Column="0" FontSize="35" HorizontalAlignment="Right" Margin="30,15">Kapton Fénykép</TextBlock>
                 <TextBlock Grid.Row="7" Grid.Column="0" FontSize="35" HorizontalAlignment="Right" Margin="30,15">Ragasztás</TextBlock>
 
-                <TextBox Grid.Row="0" Grid.Column="1" FontSize="35" Margin="30,15"></TextBox>
-                <CheckBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="left" Margin="30,15">
+                <TextBox x:Name="MbDm" Grid.Row="0" Grid.Column="1" FontSize="35" Margin="30,15" KeyUp="FocusNext"></TextBox>
+                <CheckBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="left" Margin="30,15" KeyUp="FocusNext">
                     <CheckBox.LayoutTransform>
                         <ScaleTransform ScaleX="2.3" ScaleY="2.3"></ScaleTransform>
                     </CheckBox.LayoutTransform>
                 </CheckBox>
-                <CheckBox Grid.Row="2" Grid.Column="1" HorizontalAlignment="left" Margin="30,15">
+                <CheckBox Grid.Row="2" Grid.Column="1" HorizontalAlignment="left" Margin="30,15" KeyUp="FocusNext">
                     <CheckBox.LayoutTransform>
                         <ScaleTransform ScaleX="2.3" ScaleY="2.3"></ScaleTransform>
                     </CheckBox.LayoutTransform>
                 </CheckBox>
-                <CheckBox Grid.Row="3" Grid.Column="1" HorizontalAlignment="left" Margin="30,15">
+                <CheckBox Grid.Row="3" Grid.Column="1" HorizontalAlignment="left" Margin="30,15" KeyUp="FocusNext">
                     <CheckBox.LayoutTransform>
                         <ScaleTransform ScaleX="2.3" ScaleY="2.3"></ScaleTransform>
                     </CheckBox.LayoutTransform>
                 </CheckBox>
-                <CheckBox Grid.Row="4" Grid.Column="1" HorizontalAlignment="left" Margin="30,15">
+                <CheckBox Grid.Row="4" Grid.Column="1" HorizontalAlignment="left" Margin="30,15" KeyUp="FocusNext">
                     <CheckBox.LayoutTransform>
                         <ScaleTransform ScaleX="2.3" ScaleY="2.3"></ScaleTransform>
                     </CheckBox.LayoutTransform>

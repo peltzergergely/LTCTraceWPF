@@ -21,17 +21,14 @@
                 </Grid.RowDefinitions>
 
                 <cam:Webcam x:Name="WebcamViewer" Margin="10"
-                    FrameRate="60"
                     Height="720"
                     Width="1280"
+                    FrameSize="1280, 720" 
                     ImageDirectory="C:\WebcamSnapshots"
-                    VideoDirectory="C:\VideoClips"
-                    VideoDevice="{Binding SelectedItem, ElementName=VidDevices}"
-                    AudioDevice="{Binding SelectedItem, ElementName=AudDevices}"/>
+                    VideoDevice="{Binding SelectedItem, ElementName=VidDevices}" />
 
                 <Grid Grid.Row="1" HorizontalAlignment="Center">
                     <Grid.RowDefinitions>
-                        <RowDefinition/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
@@ -46,17 +43,10 @@
                       DisplayMemberPath="Name"
                       SelectedIndex="0"/>
 
-                    <TextBlock Text="Audio Device" Grid.Row="1" VerticalAlignment="Center"/>
-                    <ComboBox x:Name="AudDevices" Grid.Row="1" Grid.Column="1"
-                      Width="210" Height="24" Margin="10,0,0,0"
-                      ItemsSource="{Binding AudioDevices}"
-                      DisplayMemberPath="Name"
-                      SelectedIndex="0"/>
                 </Grid>
 
                 <Grid Grid.Row="2" HorizontalAlignment="Center" Margin="0,10">
                     <Grid.RowDefinitions>
-                        <RowDefinition/>
                         <RowDefinition/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
@@ -70,13 +60,7 @@
                     <Button Grid.Column="1" Content="Stop Capture"
                     Height="24" Width="112" HorizontalAlignment="Left" Margin="10,0,0,0"  
                     Click="StopCaptureButton_Click"/>
-                    <Button Grid.Row="1" Content="Start Recording"
-                    Height="24" Width="112" HorizontalAlignment="Right" Margin="0,0,10,0"
-                    Click="StartRecordingButton_Click"/>
-                    <Button Grid.Row="1" Grid.Column="1" Content="Stop Recording" 
-                    Height="24" Width="115" HorizontalAlignment="Left" Margin="10,0,0,0"
-                    Click="StopRecordingButton_Click"/>
-                    <Button Grid.Row="2" Grid.ColumnSpan="2" Content="Take Snapshot"
+                    <Button Grid.Row="1" Grid.ColumnSpan="2" Content="Take Snapshot"
                     Height="24" Width="120" HorizontalAlignment="Center" 
                     Click="TakeSnapshotButton_Click"/>
                 </Grid>

@@ -38,18 +38,18 @@
                 <TextBlock Grid.Row="6" Grid.Column="0" FontSize="35" HorizontalAlignment="Right" Margin="30,15">DPS2 2.</TextBlock>
                 <TextBlock Grid.Row="7" Grid.Column="0" FontSize="35" HorizontalAlignment="Right" Margin="30,15">DSP2 3.</TextBlock>
 
-                <TextBox Grid.Row="0" Grid.Column="1" FontSize="35" Margin="30,15"></TextBox>
+                <TextBox x:Name="MbDm" Grid.Row="0" Grid.Column="1" FontSize="35" Margin="30,15" KeyUp="FocusNext"></TextBox>
                 <CheckBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="left" Margin="30,15">
                     <CheckBox.LayoutTransform>
                         <ScaleTransform ScaleX="2.3" ScaleY="2.3"></ScaleTransform>
                     </CheckBox.LayoutTransform>
                 </CheckBox>
-                <TextBox Grid.Row="2" Grid.Column="1" FontSize="35" Margin="30,15"></TextBox>
-                <TextBox Grid.Row="3" Grid.Column="1" FontSize="35" Margin="30,15"></TextBox>
-                <TextBox Grid.Row="4" Grid.Column="1" FontSize="35" Margin="30,15"></TextBox>
-                <TextBox Grid.Row="5" Grid.Column="1" FontSize="35" Margin="30,15"></TextBox>
-                <TextBox Grid.Row="6" Grid.Column="1" FontSize="35" Margin="30,15"></TextBox>
-                <TextBox Grid.Row="7" Grid.Column="1" FontSize="35" Margin="30,15"></TextBox>
+                <TextBox x:Name="DspOne0" Grid.Row="2" Grid.Column="1" FontSize="35" Margin="30,15" KeyUp="FocusNext"></TextBox>
+                <TextBox x:Name="DspOne1" Grid.Row="3" Grid.Column="1" FontSize="35" Margin="30,15" KeyUp="FocusNext"></TextBox>
+                <TextBox x:Name="DspOne2" Grid.Row="4" Grid.Column="1" FontSize="35" Margin="30,15" KeyUp="FocusNext"></TextBox>
+                <TextBox x:Name="DspTwo0" Grid.Row="5" Grid.Column="1" FontSize="35" Margin="30,15" KeyUp="FocusNext"></TextBox>
+                <TextBox x:Name="DspTwo1" Grid.Row="6" Grid.Column="1" FontSize="35" Margin="30,15" KeyUp="FocusNext"></TextBox>
+                <TextBox x:Name="DspTwo2" Grid.Row="7" Grid.Column="1" FontSize="35" Margin="30,15" KeyUp="FocusNext"></TextBox>
             </Grid>
         </StackPanel>
 

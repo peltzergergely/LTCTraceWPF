@@ -33,8 +33,8 @@ namespace LTCTraceWPF
 
         private void CamBtn_Click(object sender, RoutedEventArgs e)
         {
-            var camApp = new camApp();
-            camApp.Show();
+            var webCam = new webCam();
+            webCam.Show();
         }
     }
 }

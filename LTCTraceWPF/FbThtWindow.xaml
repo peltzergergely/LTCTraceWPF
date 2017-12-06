@@ -70,7 +70,7 @@
                 <TextBlock Grid.Row="6" Grid.Column="0" FontSize="35" HorizontalAlignment="Right" Margin="30,15">Rework Jegyzetek</TextBlock>
                 <TextBlock Grid.Row="7" Grid.Column="0" FontSize="35" HorizontalAlignment="Right" Margin="30,15">THT ragasztás, ha nincs rework?</TextBlock>
 
-                <TextBox Controls:TextBoxHelper.Watermark="FB DM" Grid.Row="0" Grid.Column="1" FontSize="35" Margin="30,15" TabIndex="0" BorderThickness="3"></TextBox>
+                <TextBox Controls:TextBoxHelper.Watermark="FB DM" Grid.Row="0" Grid.Column="1" FontSize="35" Margin="30,15" TabIndex="0" BorderThickness="2"></TextBox>
                 <DatePicker Grid.Row="1" Grid.Column="1" FontSize="35" HorizontalAlignment="Left" Margin="30,15" CalendarStyle="{StaticResource styleCalendar}" KeyboardNavigation.TabIndex="1" SelectedDate="{x:Static sys:DateTime.Now}" FirstDayOfWeek="Monday" RenderTransformOrigin="3,3"/>
                 <Button Grid.Row="2" Grid.Column="1" FontSize="25" HorizontalAlignment="Left" Margin="30,15" KeyboardNavigation.TabIndex="2" >Kamera indítása</Button>
                 <CheckBox Grid.Row="3" Grid.Column="1" HorizontalAlignment="left" Margin="30,15" KeyboardNavigation.TabIndex="3" >
@@ -88,7 +88,7 @@
                         <ScaleTransform ScaleX="2.5" ScaleY="2.5"></ScaleTransform>
                     </CheckBox.LayoutTransform>
                 </CheckBox>
-                <TextBox Controls:TextBoxHelper.Watermark="This is a textbox" Grid.Row="6" Grid.Column="1" FontSize="25" Margin="30,15" Height="90" TextWrapping="Wrap" AcceptsReturn="True" KeyboardNavigation.TabIndex="6" ></TextBox>
+                <TextBox Controls:TextBoxHelper.Watermark="Rework" Grid.Row="6" Grid.Column="1" FontSize="25" Margin="30,15" Height="90" TextWrapping="Wrap" AcceptsReturn="True" KeyboardNavigation.TabIndex="6" BorderThickness="2"></TextBox>
                 <CheckBox Grid.Row="7" Grid.Column="1" HorizontalAlignment="left" Margin="30,15" KeyboardNavigation.TabIndex="7" >
                     <CheckBox.LayoutTransform>
                         <ScaleTransform ScaleX="2.3" ScaleY="2.3"></ScaleTransform>

@@ -142,5 +142,11 @@ namespace LTCTraceWPF
             var DbWindow = new DbWindow();
             DbWindow.Show();
         }
+
+        private void webCam_Click(object sender, RoutedEventArgs e)
+        {
+            var webCam = new camApp();
+            webCam.Show();
+        }
     }
 }

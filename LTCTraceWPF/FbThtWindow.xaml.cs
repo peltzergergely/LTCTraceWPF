@@ -24,7 +24,6 @@ namespace LTCTraceWPF
             InitializeComponent();
             Loaded += (sender, e) =>
             MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
-
         }
 
         private void MainMenuBtn_Click_(object sender, RoutedEventArgs e)

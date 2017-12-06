@@ -34,11 +34,11 @@
                 <TextBlock Grid.Row="4" Grid.Column="0" FontSize="35" HorizontalAlignment="Right" Margin="30,15">Heatsink DataMatrix 4.</TextBlock>
                 <TextBlock Grid.Row="5" Grid.Column="0" FontSize="35" HorizontalAlignment="Right" Margin="30,15">Csavarozás</TextBlock>
 
-                <TextBox Grid.Row="0" Grid.Column="1" FontSize="35" Margin="30,15"></TextBox>
-                <TextBox Grid.Row="1" Grid.Column="1" FontSize="35" Margin="30,15"></TextBox>
-                <TextBox Grid.Row="2" Grid.Column="1" FontSize="35" Margin="30,15"></TextBox>
-                <TextBox Grid.Row="3" Grid.Column="1" FontSize="35" Margin="30,15"></TextBox>
-                <TextBox Grid.Row="4" Grid.Column="1" FontSize="35" Margin="30,15"></TextBox>
+                <TextBox x:Name="MbDm" Grid.Row="0" Grid.Column="1" FontSize="35" Margin="30,15"  KeyUp="FocusNext"></TextBox>
+                <TextBox x:Name="HsDm0" Grid.Row="1" Grid.Column="1" FontSize="35" Margin="30,15" KeyUp="FocusNext"></TextBox>
+                <TextBox x:Name="HsDm1" Grid.Row="2" Grid.Column="1" FontSize="35" Margin="30,15" KeyUp="FocusNext"></TextBox>
+                <TextBox x:Name="HsDm2" Grid.Row="3" Grid.Column="1" FontSize="35" Margin="30,15" KeyUp="FocusNext"></TextBox>
+                <TextBox x:Name="HsDm3" Grid.Row="4" Grid.Column="1" FontSize="35" Margin="30,15" KeyUp="FocusNext"></TextBox>
                 <TextBlock Grid.Row="5" Grid.Column="1" FontSize="35" HorizontalAlignment="Left" Margin="30,15">Placeholder</TextBlock>
             </Grid>
         </StackPanel>
