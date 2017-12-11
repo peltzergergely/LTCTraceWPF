@@ -23,6 +23,7 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="700" />
@@ -37,6 +38,7 @@
                 <TextBlock Grid.Row="5" Grid.Column="0" FontSize="35" HorizontalAlignment="Right" Margin="30,15">Termál paszta</TextBlock>
                 <TextBlock Grid.Row="6" Grid.Column="0" FontSize="35" HorizontalAlignment="Right" Margin="30,15">Sárga Izolátor (Clip Belt)</TextBlock>
                 <TextBlock Grid.Row="7" Grid.Column="0" FontSize="35" HorizontalAlignment="Right" Margin="30,15">Csavarozás</TextBlock>
+                <TextBlock x:Name="ValidationFeedback" Grid.Row="8" Grid.ColumnSpan="2" FontSize="45" HorizontalAlignment="Center" Margin="30,15" Foreground="Red"/>
 
                 <TextBox x:Name="HsDm0" Grid.Row="0" Grid.Column="1" FontSize="35" Margin="30,15" KeyUp="FocusNext"></TextBox>
                 <TextBox x:Name="HsDm1" Grid.Row="1" Grid.Column="1" FontSize="35" Margin="30,15" KeyUp="FocusNext"></TextBox>

@@ -1,16 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Npgsql;
+using System;
+using System.Configuration;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace LTCTraceWPF
 {
@@ -51,6 +43,60 @@ namespace LTCTraceWPF
         private void MainMenuBtn_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private bool DmValidation()
+        {
+            if (string.IsNullOrWhiteSpace(MbDm.Text))
+                return false;
+            else if (string.IsNullOrWhiteSpace(ReworkTbx.Text))
+                return false;
+            else
+                return true;
+        }
+
+        private void ValidationMsg(bool isValid)
+        {
+            if (!isValid)
+            {
+                MessageBox.Show("HIÁNYOS KITÖLTÉS!");
+            }
+        }
+
+        //adatbázis kapcsolat és adatok feltöltése az adatábisba
+        private void DbInsert(string dbTableName) //DB insert
+        {
+            try
+            {
+                string connstring = ConfigurationManager.ConnectionStrings["LTCTrace.CCDBConnectionString"].ConnectionString;
+                // Making connection with Npgsql provider
+                var conn = new NpgsqlConnection(connstring);
+                conn.Open();
+                // building SQL query
+                var cmd = new NpgsqlCommand("INSERT INTO " + dbTableName +
+                    " (mb_dm, created_on, username, station)" +
+                    " VALUES(:mb_dm, :created_on, :username, :station)", conn);
+                cmd.Parameters.Add(new NpgsqlParameter("mb_dm", MbDm.Text));
+                cmd.Parameters.Add(new NpgsqlParameter("created_on", DateTime.Now));
+                cmd.Parameters.Add(new NpgsqlParameter("username", "PG"));
+                cmd.Parameters.Add(new NpgsqlParameter("station", Environment.MachineName));
+                cmd.ExecuteNonQuery();
+                //closing connection ASAP
+                conn.Close();
+                MessageBox.Show("Adatok feltöltve!");
+            }
+            catch (Exception msg)
+            {
+                MessageBox.Show(msg.ToString());
+            }
+        }
+
+        private void SaveBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (DmValidation())
+                DbInsert("mbtht");
+            else
+                ValidationMsg(DmValidation());
         }
     }
 }

@@ -39,7 +39,7 @@
                 <TextBlock Grid.Row="7" Grid.Column="0" FontSize="35" HorizontalAlignment="Right" Margin="30,15">DSP2 3.</TextBlock>
 
                 <TextBox x:Name="MbDm" Grid.Row="0" Grid.Column="1" FontSize="35" Margin="30,15" KeyUp="FocusNext"></TextBox>
-                <CheckBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="left" Margin="30,15">
+                <CheckBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="left" Margin="30,15" KeyUp="FocusNext">
                     <CheckBox.LayoutTransform>
                         <ScaleTransform ScaleX="2.3" ScaleY="2.3"></ScaleTransform>
                     </CheckBox.LayoutTransform>
