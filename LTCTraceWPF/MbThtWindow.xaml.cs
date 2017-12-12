@@ -63,6 +63,37 @@ namespace LTCTraceWPF
             }
         }
 
+        private bool InterlockCheck(string table)
+        {
+            try
+            {
+                string connstring = ConfigurationManager.ConnectionStrings["LTCTrace.CCDBConnectionString"].ConnectionString;
+                var conn = new NpgsqlConnection(connstring); // Making connection
+                conn.Open();
+                var cmd = new NpgsqlCommand("SELECT COUNT(*) FROM " + table + " WHERE mb_dm = :mb_dm", conn);
+                cmd.Parameters.Add(new NpgsqlParameter("mb_dm", MbDm.Text));
+                Int32 countProd = Convert.ToInt32(cmd.ExecuteScalar());
+                conn.Close();
+                if (countProd == 1)
+                {
+                    return true;
+                }
+                else
+                    return false;
+            }
+            catch (Exception msg)
+            {
+                MessageBox.Show(msg.ToString());
+                return false;
+            }
+        }
+
+        private void InterlockMsg(bool interlockResult)
+        {
+            if (!interlockResult)
+                MessageBox.Show("Interlock! A termék nem szerepelt a korábbi munkaállomáson!");
+        }
+
         //adatbázis kapcsolat és adatok feltöltése az adatábisba
         private void DbInsert(string dbTableName) //DB insert
         {
@@ -94,8 +125,13 @@ namespace LTCTraceWPF
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
             if (DmValidation())
-                DbInsert("mbtht");
-            else
+            {
+                if (InterlockCheck("mbhsassy"))
+                {
+                    DbInsert("mbtht");
+                }else
+                    InterlockMsg(InterlockCheck("mbhsassy"));
+            }else
                 ValidationMsg(DmValidation());
         }
     }

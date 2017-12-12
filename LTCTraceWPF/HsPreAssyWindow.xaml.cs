@@ -63,6 +63,13 @@ namespace LTCTraceWPF
                 return false;
             else if (string.IsNullOrWhiteSpace(HsDm3.Text))
                 return false;
+            else if (HsDm0.Text == HsDm1.Text || 
+                HsDm0.Text == HsDm2.Text || 
+                HsDm0.Text == HsDm3.Text ||
+                HsDm1.Text == HsDm2.Text ||
+                HsDm1.Text == HsDm3.Text ||
+                HsDm2.Text == HsDm3.Text)
+                return false;
             else
                 return true;
         }
@@ -71,7 +78,7 @@ namespace LTCTraceWPF
         {
             if (!isValid)
             {
-                MessageBox.Show("HIÁNYOS KITÖLTÉS!");
+                MessageBox.Show("HIBÁS KITÖLTÉS!");
             }
         }
 
@@ -94,7 +101,7 @@ namespace LTCTraceWPF
                 cmd.Parameters.Add(new NpgsqlParameter("hs_dm_3", HsDm3.Text));
                 cmd.Parameters.Add(new NpgsqlParameter("created_on", DateTime.Now));
                 cmd.Parameters.Add(new NpgsqlParameter("username", "PG"));
-                cmd.Parameters.Add(new NpgsqlParameter("station", System.Environment.MachineName));
+                cmd.Parameters.Add(new NpgsqlParameter("station", Environment.MachineName));
                 cmd.ExecuteNonQuery();
                 //closing connection ASAP
                 conn.Close();
@@ -106,10 +113,25 @@ namespace LTCTraceWPF
             }
         }
 
+        private void ResetForm()
+        {
+            HsDm0.Text = "";
+            HsDm1.Text = "";
+            HsDm2.Text = "";
+            HsDm3.Text = "";
+            izo1Chkbx.IsChecked = false;
+            izo2Chkbx.IsChecked = false;
+            pastaChkbx.IsChecked = false;
+            Keyboard.Focus(HsDm0);
+        }
+
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
             if (DmValidation())
+            {
                 DbInsert("hspreassy");
+                ResetForm();
+            }
             else
                 ValidationMsg(DmValidation());
         }

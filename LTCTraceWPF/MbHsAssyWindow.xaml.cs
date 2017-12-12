@@ -66,9 +66,39 @@ namespace LTCTraceWPF
         private void ValidationMsg(bool isValid)
         {
             if (!isValid)
-            {
                 MessageBox.Show("HIÁNYOS KITÖLTÉS!");
+        }
+
+        //do a query the items and check if heatsink is already in the hspreassy db
+        private bool InterlockCheck(string table)
+        {
+            try
+            {
+                string connstring = ConfigurationManager.ConnectionStrings["LTCTrace.CCDBConnectionString"].ConnectionString;
+                var conn = new NpgsqlConnection(connstring); // Making connection
+                conn.Open();
+                var cmd = new NpgsqlCommand("SELECT COUNT(*) FROM " + table + " WHERE hs_dm_0 = :hs_dm_0", conn);
+                cmd.Parameters.Add(new NpgsqlParameter("hs_dm_0", HsDm0.Text));
+                Int32 countProd = Convert.ToInt32(cmd.ExecuteScalar());
+                conn.Close();
+                if (countProd == 1)
+                {
+                    return true;
+                }
+                else
+                    return false;
             }
+            catch (Exception msg)
+            {
+                MessageBox.Show(msg.ToString());
+                return false;
+            }
+        }
+
+        private void InterlockMsg(bool interlockResult)
+        {
+            if (!interlockResult)
+                MessageBox.Show("Interlock! A termék nem szerepelt a korábbi munkaállomáson!");
         }
 
         //adatbázis kapcsolat és adatok feltöltése az adatábisba
@@ -106,7 +136,13 @@ namespace LTCTraceWPF
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
             if (DmValidation())
-                DbInsert("mbhsassy");
+            {
+                if (InterlockCheck("hspreassy"))
+                {
+                    DbInsert("mbhsassy");
+                }else
+                    InterlockMsg(InterlockCheck("hspreassy"));
+            }
             else
                 ValidationMsg(DmValidation());
         }

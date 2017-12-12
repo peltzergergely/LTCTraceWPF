@@ -9,7 +9,7 @@
     <Grid>
         <StackPanel>
             <Label Content="Heatsink Előszerelés" Padding="10" FontSize="25" Background="#00363a" Foreground="white" />
-            <Label Content="Tölsd ki az alábbi mezőket!" HorizontalContentAlignment="Center" Padding="30" FontSize="35" Background="#006064" Foreground="white"/>
+            <Label x:Name="instrLbl" Content="Tölsd ki az alábbi mezőket!" HorizontalContentAlignment="Center" Padding="30" FontSize="35" Background="#006064" Foreground="white"/>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -44,17 +44,17 @@
                 <TextBox x:Name="HsDm1" Grid.Row="1" Grid.Column="1" FontSize="35" Margin="30,15" KeyUp="FocusNext"></TextBox>
                 <TextBox x:Name="HsDm2" Grid.Row="2" Grid.Column="1" FontSize="35" Margin="30,15" KeyUp="FocusNext"></TextBox>
                 <TextBox x:Name="HsDm3" Grid.Row="3" Grid.Column="1" FontSize="35" Margin="30,15" KeyUp="FocusNext"></TextBox>
-                <CheckBox Grid.Row="4" Grid.Column="1" HorizontalAlignment="left" Margin="30,15" KeyUp="FocusNext">
+                <CheckBox x:Name="izo1Chkbx" Grid.Row="4" Grid.Column="1" HorizontalAlignment="left" Margin="30,15" KeyUp="FocusNext">
                     <CheckBox.LayoutTransform>
                         <ScaleTransform ScaleX="2.3" ScaleY="2.3"></ScaleTransform>
                     </CheckBox.LayoutTransform>
                 </CheckBox>
-                <CheckBox Grid.Row="5" Grid.Column="1" HorizontalAlignment="left" Margin="30,15" KeyUp="FocusNext">
+                <CheckBox x:Name="pastaChkbx" Grid.Row="5" Grid.Column="1" HorizontalAlignment="left" Margin="30,15" KeyUp="FocusNext">
                     <CheckBox.LayoutTransform>
                         <ScaleTransform ScaleX="2.3" ScaleY="2.3"></ScaleTransform>
                     </CheckBox.LayoutTransform>
                 </CheckBox>
-                <CheckBox Grid.Row="6" Grid.Column="1" HorizontalAlignment="left" Margin="30,15" KeyUp="FocusNext">
+                <CheckBox x:Name="izo2Chkbx" Grid.Row="6" Grid.Column="1" HorizontalAlignment="left" Margin="30,15" KeyUp="FocusNext">
                     <CheckBox.LayoutTransform>
                         <ScaleTransform ScaleX="2.3" ScaleY="2.3"></ScaleTransform>
                     </CheckBox.LayoutTransform>
