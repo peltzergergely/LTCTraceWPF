@@ -17,10 +17,12 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
+                 <!-- DISABLED NO HEATSINK DATAMATRIX
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
+                 -->
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="700" />
@@ -28,17 +30,21 @@
                 </Grid.ColumnDefinitions>
 
                 <TextBlock Grid.Row="0" Grid.Column="0" FontSize="35" HorizontalAlignment="Right" Margin="30,15">Mainboard DataMatrix</TextBlock>
+                <!-- DISABLED NO HEATSINK DATAMATRIX
                 <TextBlock Grid.Row="1" Grid.Column="0" FontSize="35" HorizontalAlignment="Right" Margin="30,15">Heatsink DataMatrix 1.</TextBlock>
                 <TextBlock Grid.Row="2" Grid.Column="0" FontSize="35" HorizontalAlignment="Right" Margin="30,15">Heatsink DataMatrix 2.</TextBlock>
                 <TextBlock Grid.Row="3" Grid.Column="0" FontSize="35" HorizontalAlignment="Right" Margin="30,15">Heatsink DataMatrix 3.</TextBlock>
                 <TextBlock Grid.Row="4" Grid.Column="0" FontSize="35" HorizontalAlignment="Right" Margin="30,15">Heatsink DataMatrix 4.</TextBlock>
+                -->
                 <TextBlock Grid.Row="5" Grid.Column="0" FontSize="35" HorizontalAlignment="Right" Margin="30,15">Csavarozás</TextBlock>
 
                 <TextBox x:Name="MbDm" Grid.Row="0" Grid.Column="1" FontSize="35" Margin="30,15"  KeyUp="FocusNext"></TextBox>
+                <!-- DISABLED NO HEATSINK DATAMATRIX
                 <TextBox x:Name="HsDm0" Grid.Row="1" Grid.Column="1" FontSize="35" Margin="30,15" KeyUp="FocusNext"></TextBox>
                 <TextBox x:Name="HsDm1" Grid.Row="2" Grid.Column="1" FontSize="35" Margin="30,15" KeyUp="FocusNext"></TextBox>
                 <TextBox x:Name="HsDm2" Grid.Row="3" Grid.Column="1" FontSize="35" Margin="30,15" KeyUp="FocusNext"></TextBox>
                 <TextBox x:Name="HsDm3" Grid.Row="4" Grid.Column="1" FontSize="35" Margin="30,15" KeyUp="FocusNext"></TextBox>
+                -->
                 <TextBlock Grid.Row="5" Grid.Column="1" FontSize="35" HorizontalAlignment="Left" Margin="30,15">Placeholder</TextBlock>
             </Grid>
         </StackPanel>

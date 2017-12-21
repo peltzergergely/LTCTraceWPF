@@ -15,25 +15,25 @@
                 <StackPanel Margin="50,0" Width="500">
                     <Button x:Name="FbThtBtn" FontSize="25" Padding="10,10" Margin="10,30,10,10" Background="#FFEBC1" Click="Button_Click_1">Filterboard THT</Button>
                     <Button x:Name="FbEmcBtn" FontSize="25" Padding="10,10" Margin="10,30,10,10" Background="#F2C66C" Click="FbEmcBtn_Click">Filterboard EMC összeszerelés</Button>
-                    <Button x:Name="HouseLeakTestBtn" FontSize="25" Padding="10,10" Margin="10,30,10,10" Background="#AEBCDE" Click="HouseLeakTestBtn_Click">Ház Leak Teszt</Button>
+                    <Button x:Name="HouseLeakTestBtn" FontSize="25" Padding="10,10" Margin="10,30,10,10" Background="#AEBCDE" Click="HouseLeakTestBtn_Click" >Ház Leak Teszt</Button>
                     <Button x:Name="PottingBtn" FontSize="25" Padding="10,10" Margin="10,30,10,10" Background="#F2C66C" Click="PottingBtn_Click">Potting</Button>
-                    <Button x:Name="HipotBtn" FontSize="25" Padding="10,10" Margin="10,30,10,10" Background="#AEBCDE" Click="HipotBtn_Click">Hipot I.</Button>
+                    <Button x:Name="HipotBtn" FontSize="25" Padding="10,10" Margin="10,30,10,10" Background="#AEBCDE" Click="HipotBtn_Click" IsEnabled="False">Hipot I.</Button>
                     <Button x:Name="FbKaptBtn" FontSize="25" Padding="10,10" Margin="10,30,10,10" Background="#F2C66C" Click="FbKaptBtn_Click" >Filterboard Kaptonozás</Button>
                     <Button x:Name="HousingConnectorAssyBtn" FontSize="25" Padding="10,10" Margin="10,30,10,10" Background="#F2C66C" Click="HousingConnectorAssyBtn_Click">Ház konnektor szerelés</Button>
                 </StackPanel>
                 <StackPanel Margin="50,0" Width="500">
                     <Button x:Name="GwThtBtn" FontSize="25" Padding="10,10" Margin="10,30,10,10" Background="#FFEBC1" Click="GwThtBtn_Click">Gateway THT</Button>
-                    <Button x:Name="HsPreAssyBtn" FontSize="25" Padding="10,10" Margin="10,30,10,10" Background="#FFEBC1" Click="HsPreAssyBtn_Click">Heatsink előszerelés</Button>
-                    <Button x:Name="MbHsAssyBtn" FontSize="25" Padding="10,10" Margin="10,30,10,10" Background="#F2C66C" Click="MbHsAssyBtn_Click">Mainboard Heatszink összeszerelés</Button>
+                    <Button x:Name="HsPreAssyBtn" FontSize="25" Padding="10,10" Margin="10,30,10,10" Background="#FFEBC1" Click="HsPreAssyBtn_Click" IsEnabled="False">Heatsink előszerelés</Button>
+                    <Button x:Name="MbHsAssyBtn" FontSize="25" Padding="10,10" Margin="10,30,10,10" Background="#F2C66C" Click="MbHsAssyBtn_Click">Mainboard Heatszink szerelés</Button>
                     <Button x:Name="MbThtBtn" FontSize="25" Padding="10,10" Margin="10,30,10,10" Background="#F2C66C" Click="MbThtBtn_Click">Mainboard THT</Button>
                     <Button x:Name="MbReworkBtn" FontSize="25" Padding="10,10" Margin="10,30,10,10" Background="#F2C66C" Click="MbReworkBtn_Click">Mainboard Trace Rework Után</Button>
                 </StackPanel>
                 <StackPanel Margin="50,0" Width="500">
                     <Button x:Name="FinalAssy1Btn" FontSize="25" Padding="10,10" Margin="10,30,10,10" Background="#F26F6C" Click="FinalAssy1Btn_Click">Végszerelés I.</Button>
-                    <Button x:Name="CalibBtn" FontSize="25" Padding="10,10" Margin="10,30,10,10" Background="#AEBCDE" Click="CalibBtn_Click">Kalibráció</Button>
+                    <Button x:Name="CalibBtn" FontSize="25" Padding="10,10" Margin="10,30,10,10" Background="#AEBCDE" Click="CalibBtn_Click" IsEnabled="False">Kalibráció</Button>
                     <Button x:Name="FinalAssy2Btn" FontSize="25" Padding="10,10" Margin="10,30,10,10" Background="#F26F6C" Click="FinalAssy2Btn_Click">Végszerelés II.</Button>
                     <Button x:Name="LeakTest2Btn" FontSize="25" Padding="10,10" Margin="10,30,10,10" Background="#AEBCDE" Click="LeakTest2btn_Click">Leak Teszt Végszerelés II. után</Button>
-                    <Button x:Name="EolHipotBtn" FontSize="25" Padding="10,10" Margin="10,30,10,10" Background="#AEBCDE" Click="EolHipotBtn_Click">EOL + Hipot</Button>
+                    <Button x:Name="EolHipotBtn" FontSize="25" Padding="10,10" Margin="10,30,10,10" Background="#AEBCDE" Click="EolHipotBtn_Click" IsEnabled="False">EOL + Hipot</Button>
                     <Button x:Name="FirewallBtn" FontSize="25" Padding="10,10" Margin="10,30,10,10" Background="#F26F6C" Click="FirewallBtn_Click">Firewall</Button>
                 </StackPanel>
             </StackPanel>
