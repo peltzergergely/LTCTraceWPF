@@ -72,7 +72,7 @@
 
                 <TextBox x:Name="FbDm" Controls:TextBoxHelper.Watermark="FB DM" Grid.Row="0" Grid.Column="1" FontSize="35" Margin="30,15" TabIndex="0" BorderThickness="2"></TextBox>
                 <DatePicker Grid.Row="1" Grid.Column="1" FontSize="35" HorizontalAlignment="Left" Margin="30,15" CalendarStyle="{StaticResource styleCalendar}" KeyboardNavigation.TabIndex="1" SelectedDate="{x:Static sys:DateTime.Now}" FirstDayOfWeek="Monday" RenderTransformOrigin="3,3"/>
-                <Button Grid.Row="2" Grid.Column="1" FontSize="25" HorizontalAlignment="Left" Margin="30,15" KeyboardNavigation.TabIndex="2" >Kamera indítása</Button>
+                <Button Grid.Row="2" Grid.Column="1" FontSize="25" HorizontalAlignment="Left" Margin="30,15" KeyboardNavigation.TabIndex="2" Click="Button_Click" >Kamera indítása</Button>
                 <CheckBox Grid.Row="3" Grid.Column="1" HorizontalAlignment="left" Margin="30,15" KeyboardNavigation.TabIndex="3" >
                     <CheckBox.LayoutTransform>
                         <ScaleTransform ScaleX="2.5" ScaleY="2.5"></ScaleTransform>

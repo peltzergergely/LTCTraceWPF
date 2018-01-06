@@ -6,48 +6,175 @@
         xmlns:local="clr-namespace:LTCTraceWPF"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1080" Width="1920" ResizeMode="NoResize" WindowState="Maximized" WindowStartupLocation="CenterScreen" WindowStyle="None" FontFamily="Verdana" Background="#FDFDFD">
+        Title="MainWindow" 
+        Height="1080" 
+        Width="1920"
+        ResizeMode="NoResize"
+        WindowState="Maximized"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        FontFamily="Verdana"
+        Background="#FDFDFD">
     <Grid>
         <StackPanel>
-            <Label Content="Főmenü" Padding="10" FontSize="25" Background="#00363a" Foreground="white" />
-            <Label Content="Válaszd ki a megfelelő munkafolyamatot!" HorizontalContentAlignment="Center" Padding="30" FontSize="35" Background="#006064" Foreground="white"/>
-            <StackPanel Orientation="Horizontal" Margin="50,25" HorizontalAlignment="Center" Width="auto">
-                <StackPanel Margin="50,0" Width="500">
-                    <Button x:Name="FbThtBtn" FontSize="25" Padding="10,10" Margin="10,30,10,10" Background="#FFEBC1" Click="Button_Click_1">Filterboard THT</Button>
-                    <Button x:Name="FbEmcBtn" FontSize="25" Padding="10,10" Margin="10,30,10,10" Background="#F2C66C" Click="FbEmcBtn_Click">Filterboard EMC összeszerelés</Button>
-                    <Button x:Name="HouseLeakTestBtn" FontSize="25" Padding="10,10" Margin="10,30,10,10" Background="#AEBCDE" Click="HouseLeakTestBtn_Click" >Ház Leak Teszt</Button>
-                    <Button x:Name="PottingBtn" FontSize="25" Padding="10,10" Margin="10,30,10,10" Background="#F2C66C" Click="PottingBtn_Click">Potting</Button>
-                    <Button x:Name="HipotBtn" FontSize="25" Padding="10,10" Margin="10,30,10,10" Background="#AEBCDE" Click="HipotBtn_Click" IsEnabled="False">Hipot I.</Button>
-                    <Button x:Name="FbKaptBtn" FontSize="25" Padding="10,10" Margin="10,30,10,10" Background="#F2C66C" Click="FbKaptBtn_Click" >Filterboard Kaptonozás</Button>
-                    <Button x:Name="HousingConnectorAssyBtn" FontSize="25" Padding="10,10" Margin="10,30,10,10" Background="#F2C66C" Click="HousingConnectorAssyBtn_Click">Ház konnektor szerelés</Button>
+            <Label Content="Főmenü"
+                   Padding="10" 
+                   FontSize="25"
+                   Background="#00363a" 
+                   Foreground="white" />
+            <Label Content="Válaszd ki a megfelelő munkafolyamatot!" 
+                   HorizontalContentAlignment="Center" 
+                   Padding="30" 
+                   FontSize="35" 
+                   Background="#006064" 
+                   Foreground="white"/>
+            <StackPanel 
+                Orientation="Horizontal" 
+                Margin="50,25" 
+                HorizontalAlignment="Center" 
+                Width="auto">
+                <StackPanel Margin="40,0" 
+                            Width="550">
+                    <Button x:Name="FbThtBtn"
+                            FontSize="25" 
+                            Padding="10,10" 
+                            Margin="10,30,10,10" 
+                            Background="#FFEBC1" 
+                            Click="Button_Click_1">Filterboard AC DC Konnektor Szer.</Button>
+                    <Button x:Name="FbEmcBtn"
+                            FontSize="25"
+                            Padding="10,10" 
+                            Margin="10,30,10,10" 
+                            Background="#F2C66C" 
+                            Click="FbEmcBtn_Click">Filterboard EMC Shield Szer.</Button>
+                    <Button x:Name="HouseLeakTestBtn" 
+                            FontSize="25" 
+                            Padding="10,10" 
+                            Margin="10,30,10,10" 
+                            Background="#AEBCDE" 
+                            Click="HouseLeakTestBtn_Click" >Ház Leak Teszt</Button>
+                    <Button x:Name="PottingBtn" 
+                            FontSize="25" 
+                            Padding="10,10" 
+                            Margin="10,30,10,10" 
+                            Background="#F2C66C" 
+                            Click="PottingBtn_Click">Potting</Button>
+                    <Button x:Name="HipotBtn" 
+                            FontSize="25" 
+                            Padding="10,10" 
+                            Margin="10,30,10,10" 
+                            Background="#AEBCDE" 
+                            Click="HipotBtn_Click" 
+                            IsEnabled="False">Hipot I.</Button>
+                    <Button x:Name="HousingConnectorAssyBtn" 
+                            FontSize="25" 
+                            Padding="10,10" 
+                            Margin="10,30,10,10" 
+                            Background="#F2C66C" 
+                            Click="HousingConnectorAssyBtn_Click">Ház konnektor szerelés</Button>
                 </StackPanel>
-                <StackPanel Margin="50,0" Width="500">
-                    <Button x:Name="GwThtBtn" FontSize="25" Padding="10,10" Margin="10,30,10,10" Background="#FFEBC1" Click="GwThtBtn_Click">Gateway THT</Button>
-                    <Button x:Name="HsPreAssyBtn" FontSize="25" Padding="10,10" Margin="10,30,10,10" Background="#FFEBC1" Click="HsPreAssyBtn_Click" IsEnabled="False">Heatsink előszerelés</Button>
-                    <Button x:Name="MbHsAssyBtn" FontSize="25" Padding="10,10" Margin="10,30,10,10" Background="#F2C66C" Click="MbHsAssyBtn_Click">Mainboard Heatszink szerelés</Button>
-                    <Button x:Name="MbThtBtn" FontSize="25" Padding="10,10" Margin="10,30,10,10" Background="#F2C66C" Click="MbThtBtn_Click">Mainboard THT</Button>
-                    <Button x:Name="MbReworkBtn" FontSize="25" Padding="10,10" Margin="10,30,10,10" Background="#F2C66C" Click="MbReworkBtn_Click">Mainboard Trace Rework Után</Button>
+                <StackPanel Margin="40,0"
+                            Width="550">
+                    <Button x:Name="MbHsAssyBtn"
+                            FontSize="25"
+                            Padding="10,10"
+                            Margin="10,30,10,10"
+                            Background="#FFEBC1"
+                            Click="MbHsAssyBtn_Click">Mainboard Heatszink szerelés</Button>
+                    <Button x:Name="MbThtBtn" 
+                            FontSize="25"
+                            Padding="10,10"
+                            Margin="10,30,10,10"
+                            Background="#F2C66C" 
+                            Click="MbThtBtn_Click">Mainboard THT</Button>
+                    
                 </StackPanel>
-                <StackPanel Margin="50,0" Width="500">
-                    <Button x:Name="FinalAssy1Btn" FontSize="25" Padding="10,10" Margin="10,30,10,10" Background="#F26F6C" Click="FinalAssy1Btn_Click">Végszerelés I.</Button>
-                    <Button x:Name="CalibBtn" FontSize="25" Padding="10,10" Margin="10,30,10,10" Background="#AEBCDE" Click="CalibBtn_Click" IsEnabled="False">Kalibráció</Button>
-                    <Button x:Name="FinalAssy2Btn" FontSize="25" Padding="10,10" Margin="10,30,10,10" Background="#F26F6C" Click="FinalAssy2Btn_Click">Végszerelés II.</Button>
-                    <Button x:Name="LeakTest2Btn" FontSize="25" Padding="10,10" Margin="10,30,10,10" Background="#AEBCDE" Click="LeakTest2btn_Click">Leak Teszt Végszerelés II. után</Button>
-                    <Button x:Name="EolHipotBtn" FontSize="25" Padding="10,10" Margin="10,30,10,10" Background="#AEBCDE" Click="EolHipotBtn_Click" IsEnabled="False">EOL + Hipot</Button>
-                    <Button x:Name="FirewallBtn" FontSize="25" Padding="10,10" Margin="10,30,10,10" Background="#F26F6C" Click="FirewallBtn_Click">Firewall</Button>
+                <StackPanel Margin="40,0" 
+                            Width="550">
+                    <Button x:Name="FinalAssy1Btn" 
+                            FontSize="25" 
+                            Padding="10,10" 
+                            Margin="10,30,10,10" 
+                            Background="#F26F6C" 
+                            Click="FinalAssy1Btn_Click">Végszerelés I.</Button>
+                    <Button x:Name="CalibBtn" 
+                            FontSize="25"
+                            Padding="10,10" 
+                            Margin="10,30,10,10"
+                            Background="#AEBCDE" 
+                            Click="CalibBtn_Click" 
+                            IsEnabled="False">Kalibráció</Button>
+                    <Button x:Name="FinalAssy2Btn" 
+                            FontSize="25"
+                            Padding="10,10" 
+                            Margin="10,30,10,10" 
+                            Background="#F26F6C"
+                            Click="FinalAssy2Btn_Click">Végszerelés II.</Button>
+                    <Button x:Name="LeakTest2Btn" 
+                            FontSize="25" 
+                            Padding="10,10" 
+                            Margin="10,30,10,10" 
+                            Background="#AEBCDE" 
+                            Click="LeakTest2btn_Click">Leak Teszt Végszerelés II. után</Button>
+                    <Button x:Name="EolHipotBtn" 
+                            FontSize="25" 
+                            Padding="10,10" 
+                            Margin="10,30,10,10" 
+                            Background="#AEBCDE" 
+                            Click="EolHipotBtn_Click" 
+                            IsEnabled="False">EOL + Hipot</Button>
+                    <Button x:Name="FirewallBtn" 
+                            FontSize="25"
+                            Padding="10,10" 
+                            Margin="10,30,10,10"
+                            Background="#F26F6C"
+                            Click="FirewallBtn_Click">Firewall</Button>
                 </StackPanel>
             </StackPanel>
         </StackPanel>
-        <Button x:Name="ExitBtn" HorizontalAlignment="Left" Margin="40" VerticalAlignment="Bottom" Height="auto" Width="auto" Click="Button_Click" Background="#FDFDFD" BorderBrush="White" Foreground="DarkSlateGray">
+        <Button x:Name="ExitBtn" 
+                HorizontalAlignment="Left" 
+                Margin="40"
+                VerticalAlignment="Bottom"
+                Height="auto" 
+                Width="auto"
+                Click="Button_Click"
+                Background="#FDFDFD" 
+                BorderBrush="White" 
+                Foreground="DarkSlateGray">
             <StackPanel Orientation="Horizontal">
-                <TextBlock VerticalAlignment="Center" Margin="5" HorizontalAlignment="Left" FontFamily="Segoe MDL2 Assets" FontSize="48" Padding="2" >&#xEC25;</TextBlock>
-                <TextBlock VerticalAlignment="Center" FontSize="25" Padding="2">Kilépés</TextBlock>
+                <TextBlock VerticalAlignment="Center"
+                           Margin="5"
+                           HorizontalAlignment="Left"
+                           FontFamily="Segoe MDL2 Assets" 
+                           FontSize="48" 
+                           Padding="2" >&#xEC25;</TextBlock>
+                <TextBlock VerticalAlignment="Center" 
+                           FontSize="25" 
+                           Padding="2">Kilépés</TextBlock>
             </StackPanel>
         </Button>
-        <Button x:Name="DbBtn" HorizontalAlignment="Right" Margin="40" VerticalAlignment="Bottom" Height="auto" Width="auto" Click="DbBtn_Click" Background="#FDFDFD" BorderBrush="White" Foreground="DarkSlateGray">
+        <Button x:Name="DbBtn" 
+                HorizontalAlignment="Right"
+                Margin="40" 
+                VerticalAlignment="Bottom" 
+                Height="auto" 
+                Width="auto"
+                Click="DbBtn_Click"
+                Background="#FDFDFD" 
+                BorderBrush="White" 
+                Foreground="DarkSlateGray">
             <StackPanel Orientation="Horizontal">
-                <TextBlock VerticalAlignment="Center" Margin="5" HorizontalAlignment="Left" FontFamily="Segoe MDL2 Assets" FontSize="48" Padding="2" >&#xE12B;</TextBlock>
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="25" Padding="2">Adatbázis</TextBlock>
+                <TextBlock VerticalAlignment="Center" 
+                           Margin="5" 
+                           HorizontalAlignment="Left"
+                           FontFamily="Segoe MDL2 Assets" 
+                           FontSize="48"
+                           Padding="2" >&#xE12B;</TextBlock>
+                <TextBlock VerticalAlignment="Center"
+                           HorizontalAlignment="Right"
+                           FontSize="25" 
+                           Padding="2">Adatbázis</TextBlock>
             </StackPanel>
         </Button>
     </Grid>

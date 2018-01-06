@@ -31,6 +31,21 @@ namespace LTCTraceWPF
 
             this.DataContext = this;
             VideoDevices = EncoderDevices.FindDevices(EncoderDeviceType.Video);
+            VidDevices.SelectedIndex = 1;
+            StartCapture();
+        }
+
+        private void StartCapture()
+        {
+            try
+            {
+                // Display webcam video
+                WebcamViewer.StartPreview();
+            }
+            catch (Microsoft.Expression.Encoder.SystemErrorException ex)
+            {
+                MessageBox.Show("Device is in use by another application");
+            }
         }
 
         private void StartCaptureButton_Click(object sender, RoutedEventArgs e)
