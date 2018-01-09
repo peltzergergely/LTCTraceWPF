@@ -25,9 +25,16 @@ namespace LTCTraceWPF
     {
         public Collection<EncoderDevice> VideoDevices { get; set; }
 
+        public static int NumOfPics { get; set; } = 0;
+
+        public string TableName { get; set; } = "";
+
+        public string DataMatrix { get; set; } = "";
+
         public camApp()
         {
             InitializeComponent();
+            Loaded += (sender, e) => MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
 
             this.DataContext = this;
             VideoDevices = EncoderDevices.FindDevices(EncoderDeviceType.Video);
@@ -67,10 +74,24 @@ namespace LTCTraceWPF
             WebcamViewer.StopPreview();
         }
 
+        public string FilePath { get; set; } = "";
+
         private void TakeSnapshotButton_Click(object sender, RoutedEventArgs e)
         {
             // Take snapshot of webcam video.
             WebcamViewer.TakeSnapshot();
+            //show image and ask user if want to save or discard
+            //make a new form for this
+            //and just pass the path and delete the image if cancelled and save if verified
+            FilePath = (WebcamViewer.TakeSnapshot());
+            TransferFileName();
+        }
+
+        private void TransferFileName()
+        {
+            //public ImageToDb(string filePathName, string dataMatrix, string tableName, int numOfImage)
+            var ImageToDb = new ImageToDb(FilePath, DataMatrix, TableName, NumOfPics);
+            ImageToDb.Show();
         }
 
         private void MainMenuBtn_Click(object sender, RoutedEventArgs e)

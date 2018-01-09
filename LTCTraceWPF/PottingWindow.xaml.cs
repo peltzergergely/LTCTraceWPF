@@ -29,5 +29,10 @@ namespace LTCTraceWPF
         {
             this.Close();
         }
+
+        private void WebCamLaunchClick(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
