@@ -148,11 +148,5 @@ namespace LTCTraceWPF
             var webCam = new camApp();
             webCam.Show();
         }
-
-        private void imageToDb_Click(object sender, RoutedEventArgs e)
-        {
-            var imageToDb = new ImageToDb("C:\\WebcamSnapshots\\image.Jpeg");
-            imageToDb.Show();
-        }
     }
 }

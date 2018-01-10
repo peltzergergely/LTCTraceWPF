@@ -66,8 +66,6 @@ namespace LTCTraceWPF
             return (Regex.IsMatch(dataToValidate, rgx));
         }
 
-
-
         private void FbDmValidator()
         {
             if (RegexValidation(FbDmTxbx.Text, "FbDmRegEx"))
@@ -105,7 +103,9 @@ namespace LTCTraceWPF
 
         private void ValidateAll()
         {
-            if (IsDmValidated == true || Chkbx1.IsChecked == true || Chkbx2.IsChecked == true || CameraLaunched == true)
+            if (IsDmValidated == true 
+                //|| Chkbx1.IsChecked == true || Chkbx2.IsChecked == true
+                || CameraLaunched == true)
             {
                 AllFieldsValidated = true;
             }

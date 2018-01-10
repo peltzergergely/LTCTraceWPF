@@ -223,6 +223,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MessageForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PottingWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -245,6 +249,9 @@
     </Compile>
     <Compile Include="MbThtWindow.xaml.cs">
       <DependentUpon>MbThtWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MessageForm.xaml.cs">
+      <DependentUpon>MessageForm.xaml</DependentUpon>
     </Compile>
     <Compile Include="PottingWindow.xaml.cs">
       <DependentUpon>PottingWindow.xaml</DependentUpon>

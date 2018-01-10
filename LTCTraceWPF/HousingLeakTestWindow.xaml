@@ -21,7 +21,7 @@
                    FontSize="25" 
                    Background="#00363a" 
                    Foreground="white" />
-            <Label Content="Tölsd ki az alábbi mezőket!"
+            <Label Content="Ha a szivárgás teszt eredménye 5 pa/s -nál kisebb akkor nyomtass Vonalkódot és ragaszd fel a házra!"
                    HorizontalContentAlignment="Center" 
                    Padding="30" 
                    FontSize="35" 
@@ -52,15 +52,22 @@
                            FontSize="35"
                            HorizontalAlignment="Right" 
                            Margin="30,15">Leak Teszt Eredmény (Pa/s)</TextBlock>
-                
-                <TextBox Grid.Row="0" 
+                <TextBox x:Name="housingDmTxbx"
+                         Grid.Row="0" 
                          Grid.Column="1" 
                          FontSize="35" 
-                         Margin="30,15"></TextBox>
-                <TextBox Grid.Row="1" 
+                         Margin="30,15"
+                         IsTabStop="True"
+                         TabIndex="0"
+                         KeyUp="OnKeyUpEvent" ></TextBox>
+                <TextBox x:Name="leakTestTxbx"
+                         Grid.Row="1" 
                          Grid.Column="1" 
                          FontSize="35" 
-                         Margin="30,15"></TextBox>
+                         Margin="30,15"
+                         IsTabStop="True"
+                         TabIndex="1"
+                         KeyUp="OnKeyUpEvent"></TextBox>
             </Grid>
         </StackPanel>
 
@@ -87,7 +94,23 @@
                            Padding="2">Főmenü</TextBlock>
             </StackPanel>
         </Button>
-        <Button x:Name="SaveBtn"
+
+        <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Right">
+            <!--
+            <TextBlock VerticalAlignment="Center" 
+                           Margin="5,0,30,0"
+                           HorizontalAlignment="Right" 
+                           FontFamily="Segoe MDL2 Assets" 
+                           FontSize="48"
+                           Padding="2" >&#xE77B;</TextBlock>
+            <TextBlock x:Name="userNameTxt"
+                Grid.Row="0" 
+                           Grid.Column="0"
+                           FontSize="35" 
+                           HorizontalAlignment="Right"
+                           Margin="30,15">User</TextBlock>
+            -->
+            <Button x:Name="SaveBtn"
                 HorizontalAlignment="Right" 
                 Margin="40" 
                 VerticalAlignment="Bottom" 
@@ -95,7 +118,10 @@
                 Width="auto" 
                 Background="#FDFDFD" 
                 BorderBrush="White" 
-                Foreground="DarkSlateGray">
+                Foreground="DarkSlateGray" 
+                Click="SaveBtn_Click"
+                IsTabStop="True"
+                TabIndex="2">
             <StackPanel Orientation="Horizontal">
                 <TextBlock VerticalAlignment="Center" 
                            Margin="5"
@@ -109,5 +135,6 @@
                            Padding="2">Mentés</TextBlock>
             </StackPanel>
         </Button>
+        </StackPanel>
     </Grid>
 </Window>
