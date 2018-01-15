@@ -96,6 +96,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="FbACDCAssy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="FbEmcWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -167,6 +171,9 @@
     </Compile>
     <Compile Include="EolHipotWindow.xaml.cs">
       <DependentUpon>EolHipotWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FbACDCAssy.xaml.cs">
+      <DependentUpon>FbACDCAssy.xaml</DependentUpon>
     </Compile>
     <Compile Include="FbEmcWindow.xaml.cs">
       <DependentUpon>FbEmcWindow.xaml</DependentUpon>

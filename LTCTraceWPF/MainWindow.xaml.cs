@@ -32,8 +32,8 @@ namespace LTCTraceWPF
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            var fbthtWindow = new fbtht();
-            fbthtWindow.Show();
+            var fbACDCAssy = new FbACDCAssy();
+            fbACDCAssy.Show();
         }
         private void FbEmcBtn_Click(object sender, RoutedEventArgs e)
         {

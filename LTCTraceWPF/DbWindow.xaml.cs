@@ -36,7 +36,7 @@ namespace LTCTraceWPF
             try
             {
                 // connstring stored in App.config
-                string connstring = ConfigurationManager.ConnectionStrings["LTCTrace.Properties.Settings.CCDBConnectionString"].ConnectionString;
+                string connstring = ConfigurationManager.ConnectionStrings["LTCTrace.DBConnectionString"].ConnectionString;
                 var conn = new NpgsqlConnection(connstring);
                 conn.Open();
                 string sql = query;

@@ -5,19 +5,20 @@ using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Input;
 
-
 namespace LTCTraceWPF
 {
     /// <summary>
-    /// Interaction logic for HousingLeakTestWindow.xaml
+    /// Interaction logic for FbACDCAssy.xaml
     /// </summary>
-    public partial class HousingLeakTestWindow : Window
+    public partial class FbACDCAssy : Window
     {
         public bool IsDmValidated { get; set; } = false;
 
         public bool AllFieldsValidated { get; set; } = false;
 
-        public HousingLeakTestWindow()
+        public DateTime? StartedOn { get; set; } = null;
+        
+        public FbACDCAssy()
         {
             Loaded += (sender, e) => MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
             InitializeComponent();
@@ -34,7 +35,7 @@ namespace LTCTraceWPF
                 return;
             }
 
-            if (e.Key == Key.Enter && housingDmTxbx.Text.Length > 0)
+            if (e.Key == Key.Enter && FbDmTxbx.Text.Length > 0)
             {
                 TraversalRequest tRequest = new TraversalRequest(FocusNavigationDirection.Next);
                 UIElement keyboardFocus = Keyboard.FocusedElement as UIElement;
@@ -53,24 +54,9 @@ namespace LTCTraceWPF
             }
         }
 
-        public bool RegexValidation(string dataToValidate, string datafieldName)
-        {
-            string rgx = ConfigurationManager.AppSettings[datafieldName];
-            return (Regex.IsMatch(dataToValidate, rgx));
-        }
-
-        private void ResetForm()
-        {
-            IsDmValidated = false;
-            AllFieldsValidated = false;
-            housingDmTxbx.Text = "";
-            leakTestTxbx.Text = "";
-            housingDmTxbx.Focus();
-        }
-
         private void FormValidator()
         {
-            if (housingDmTxbx.Text.Length > 0 &&  float.Parse(leakTestTxbx.Text) < 5 && float.Parse(leakTestTxbx.Text) > 0)
+            if (FbDmTxbx.Text.Length > 0 && screwChkbx.IsChecked == true)
             {
                 AllFieldsValidated = true;
             }
@@ -80,36 +66,13 @@ namespace LTCTraceWPF
             }
         }
 
-        private void DbInsert(string table) //DB insert
+        private void ResetForm()
         {
-            try
-            {
-                string connstring = ConfigurationManager.ConnectionStrings["LTCTrace.DBConnectionString"].ConnectionString;
-                // Making connection with Npgsql provider
-                var conn = new NpgsqlConnection(connstring);
-                var UploadMoment = DateTime.Now;
-                conn.Open();
-                // building SQL query
-                var cmd = new NpgsqlCommand("INSERT INTO " + table + " (housing_dm, leak_test_result, pc_name, created_on) " +
-                    "VALUES(:housing_dm, :leak_test_result, :pc_name, :timestamp)", conn);
-                cmd.Parameters.Add(new NpgsqlParameter("housing_dm", housingDmTxbx.Text));
-                cmd.Parameters.Add(new NpgsqlParameter("leak_test_result", float.Parse(leakTestTxbx.Text)));
-                cmd.Parameters.Add(new NpgsqlParameter("pc_name", System.Environment.MachineName));
-                cmd.Parameters.Add(new NpgsqlParameter("timestamp", UploadMoment));
-                cmd.ExecuteNonQuery();
-                //closing connection ASAP
-                conn.Close();
-                CallMessageForm("Adatok feltöltve!");
-            }
-            catch (Exception msg)
-            {
-                MessageBox.Show(msg.ToString());
-            }
-        }
-
-        private void MainMenuBtn_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
+            IsDmValidated = false;
+            AllFieldsValidated = false;
+            FbDmTxbx.Text = "";
+            screwChkbx.IsChecked = false;
+            FbDmTxbx.Focus();
         }
 
         private void CallMessageForm(string msgToShow)
@@ -120,12 +83,50 @@ namespace LTCTraceWPF
             msgWindow.Activate();
         }
 
+        private void DbInsert(string table) //DB insert
+        {
+            try
+            {
+                string connstring = ConfigurationManager.ConnectionStrings["LTCTrace.DBConnectionString"].ConnectionString;
+                // Making connection with Npgsql provider
+                var conn = new NpgsqlConnection(connstring);
+                DateTime UploadMoment = DateTime.Now;
+                conn.Open();
+                // building SQL query
+                var cmd = new NpgsqlCommand("INSERT INTO " + table + " (fb_dm, pc_name, started_on, saved_on) " +
+                    "VALUES(:fb_dm, :pc_name, :started_on, :saved_on)", conn);
+                cmd.Parameters.Add(new NpgsqlParameter("fb_dm", FbDmTxbx.Text));
+                cmd.Parameters.Add(new NpgsqlParameter("pc_name", System.Environment.MachineName));
+                cmd.Parameters.Add(new NpgsqlParameter("started_on", StartedOn));
+                cmd.Parameters.Add(new NpgsqlParameter("saved_on", DateTime.Now));
+                cmd.ExecuteNonQuery();
+                //closing connection ASAP
+                conn.Close();
+                CallMessageForm("Adatok feltöltve!" + " " + StartedOn + " " + UploadMoment);
+            }
+            catch (Exception msg)
+            {
+                MessageBox.Show(msg.ToString());
+                ResetForm();
+            }
+        }
+
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
             if (AllFieldsValidated)
             {
-                DbInsert("housing_leak_test_one");
+                DbInsert("fb_acdc_assy");
             }
+        }
+
+        private void MainMenuBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void FbDmTxbx_LostFocus(object sender, RoutedEventArgs e)
+        {
+            StartedOn = DateTime.Now;
         }
     }
 }
