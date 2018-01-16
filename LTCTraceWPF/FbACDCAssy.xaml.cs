@@ -12,7 +12,7 @@ namespace LTCTraceWPF
     /// </summary>
     public partial class FbACDCAssy : Window
     {
-        public bool IsFbDmValidated { get; set; } = false;
+        public bool IsDmValidated { get; set; } = false;
 
         public bool AllFieldsValidated { get; set; } = false;
 
@@ -24,6 +24,7 @@ namespace LTCTraceWPF
             InitializeComponent();
         }
 
+        //Handles focus movement and checks validator
         private void OnKeyUpEvent(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Escape)
@@ -58,7 +59,7 @@ namespace LTCTraceWPF
 
         private void FormValidator()
         {
-            if (FbDmTxbx.Text.Length > 0 && screwChkbx.IsChecked == true)
+            if (IsDmValidated == true && screwChkbx.IsChecked == true)
             {
                 AllFieldsValidated = true;
             }
@@ -77,14 +78,14 @@ namespace LTCTraceWPF
         private void DmValidator()
         {
             if (RegexValidation(FbDmTxbx.Text, "FbDmRegEx"))
-                IsFbDmValidated = true;
+                IsDmValidated = true;
             else
-                IsFbDmValidated = false;
+                IsDmValidated = false;
         }
 
         private void ResetForm()
         {
-            IsFbDmValidated = false;
+            IsDmValidated = false;
             AllFieldsValidated = false;
             FbDmTxbx.Text = "";
             screwChkbx.IsChecked = false;

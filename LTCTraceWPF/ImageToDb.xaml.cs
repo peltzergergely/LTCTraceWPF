@@ -32,7 +32,7 @@ namespace LTCTraceWPF
 
         public int NumOfPic { get; set; } = 0;
         
-        public string constr { get; set; } = @ConfigurationManager.ConnectionStrings["LTCTrace.CCDBConnectionString"].ConnectionString;
+        public string constr { get; set; } = @ConfigurationManager.ConnectionStrings["LTCTrace.DBConnectionString"].ConnectionString;
 
 
         public ImageToDb()

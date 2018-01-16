@@ -74,11 +74,19 @@ namespace LTCTraceWPF
                 IsDmValidated = false;
         }
 
+        private void CallMessageForm(string msgToShow)
+        {
+            ResetForm();
+            var msgWindow = new MessageForm(msgToShow);
+            msgWindow.Show();
+            msgWindow.Activate();
+        }
+
         private void ResetForm()
         {
             IsDmValidated = false;
             AllFieldsValidated = false;
-            camer
+            IsCameraLaunched = false;
             FbDmTxbx.Text = "";
             FbDmTxbx.Focus();
         }
@@ -93,12 +101,10 @@ namespace LTCTraceWPF
 
         private void ValidateAll()
         {
-            if (IsDmValidated == true 
-                //|| Chkbx1.IsChecked == true || Chkbx2.IsChecked == true
-                || IsCameraLaunched == true)
-            {
+            if (IsDmValidated == true || IsCameraLaunched == true)
                 AllFieldsValidated = true;
-            }
+            else
+                CallMessageForm("Hibás kitöltés");
         }
 
         private void SaveBtn_Click(object sender, RoutedEventArgs e)

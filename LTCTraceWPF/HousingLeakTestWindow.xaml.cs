@@ -63,7 +63,7 @@ namespace LTCTraceWPF
 
         private void DmValidator()
         {
-            if (RegexValidation(housingDmTxbx.Text, "FbDmRegEx"))
+            if (RegexValidation(housingDmTxbx.Text, "HousingDmRegEx"))
                 IsDmValidated = true;
             else
                 IsDmValidated = false;

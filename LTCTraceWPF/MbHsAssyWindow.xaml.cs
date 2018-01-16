@@ -60,13 +60,9 @@ namespace LTCTraceWPF
         private void FormValidator()
         {
             if (IsDmValidated == true && screwChkbx.IsChecked == true)
-            {
                 AllFieldsValidated = true;
-            }
             else
-            {
                 CallMessageForm("Hibás kitöltés");
-            }
         }
 
         public bool RegexValidation(string dataToValidate, string datafieldName)
