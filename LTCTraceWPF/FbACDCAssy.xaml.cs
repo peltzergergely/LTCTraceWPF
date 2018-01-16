@@ -12,7 +12,7 @@ namespace LTCTraceWPF
     /// </summary>
     public partial class FbACDCAssy : Window
     {
-        public bool IsDmValidated { get; set; } = false;
+        public bool IsFbDmValidated { get; set; } = false;
 
         public bool AllFieldsValidated { get; set; } = false;
 
@@ -52,6 +52,8 @@ namespace LTCTraceWPF
                 FormValidator();
                 SaveBtn_Click(sender, e);
             }
+
+            DmValidator();
         }
 
         private void FormValidator()
@@ -66,9 +68,23 @@ namespace LTCTraceWPF
             }
         }
 
+        public bool RegexValidation(string dataToValidate, string datafieldName)
+        {
+            string rgx = ConfigurationManager.AppSettings[datafieldName];
+            return (Regex.IsMatch(dataToValidate, rgx));
+        }
+
+        private void DmValidator()
+        {
+            if (RegexValidation(FbDmTxbx.Text, "FbDmRegEx"))
+                IsFbDmValidated = true;
+            else
+                IsFbDmValidated = false;
+        }
+
         private void ResetForm()
         {
-            IsDmValidated = false;
+            IsFbDmValidated = false;
             AllFieldsValidated = false;
             FbDmTxbx.Text = "";
             screwChkbx.IsChecked = false;
@@ -102,7 +118,7 @@ namespace LTCTraceWPF
                 cmd.ExecuteNonQuery();
                 //closing connection ASAP
                 conn.Close();
-                CallMessageForm("Adatok feltöltve!" + " " + StartedOn + " " + UploadMoment);
+                CallMessageForm("Adatok feltöltve!");
             }
             catch (Exception msg)
             {
@@ -119,14 +135,14 @@ namespace LTCTraceWPF
             }
         }
 
-        private void MainMenuBtn_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
         private void FbDmTxbx_LostFocus(object sender, RoutedEventArgs e)
         {
             StartedOn = DateTime.Now;
+        }
+
+        private void MainMenuBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

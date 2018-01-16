@@ -18,7 +18,7 @@ namespace LTCTraceWPF
 
         public bool AllFieldsValidated { get; set; } = false;
 
-        public bool CameraLaunched { get; set; } = false;
+        public bool IsCameraLaunched { get; set; } = false;
 
         public FbEmcWindow()
         {
@@ -69,34 +69,24 @@ namespace LTCTraceWPF
         private void FbDmValidator()
         {
             if (RegexValidation(FbDmTxbx.Text, "FbDmRegEx"))
-            {
-                FbDmErrLbl.Text = "";
-                //FbDmTxbx.Background = Brushes.PaleGreen;
-                //FbDmTxbx.BorderThickness = new Thickness(2, 2, 2, 2);
                 IsDmValidated = true;
-            }
             else
-            {
-                FbDmErrLbl.Text = "Hibás!";
-                //FbDmTxbx.Background = Brushes.White;
-                //FbDmTxbx.BorderThickness = new Thickness(2, 2, 2, 3);
                 IsDmValidated = false;
-            }
         }
 
         private void ResetForm()
         {
-            FbDmTxbx.Background = Brushes.White;
-            FbDmTxbx.BorderThickness = new Thickness(1, 1, 1, 1);
             IsDmValidated = false;
             AllFieldsValidated = false;
+            camer
+            FbDmTxbx.Text = "";
             FbDmTxbx.Focus();
         }
 
         private void WebCamLaunchClick(object sender, RoutedEventArgs e)
         {
             SaveBtn.Focus();
-            CameraLaunched = true;
+            IsCameraLaunched = true;
             var webCam = new camApp();
             webCam.Show();
         }
@@ -105,7 +95,7 @@ namespace LTCTraceWPF
         {
             if (IsDmValidated == true 
                 //|| Chkbx1.IsChecked == true || Chkbx2.IsChecked == true
-                || CameraLaunched == true)
+                || IsCameraLaunched == true)
             {
                 AllFieldsValidated = true;
             }

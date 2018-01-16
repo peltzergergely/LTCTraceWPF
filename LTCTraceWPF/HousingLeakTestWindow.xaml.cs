@@ -51,12 +51,22 @@ namespace LTCTraceWPF
                 FormValidator();
                 SaveBtn_Click(sender, e);
             }
+
+            DmValidator();
         }
 
         public bool RegexValidation(string dataToValidate, string datafieldName)
         {
             string rgx = ConfigurationManager.AppSettings[datafieldName];
             return (Regex.IsMatch(dataToValidate, rgx));
+        }
+
+        private void DmValidator()
+        {
+            if (RegexValidation(housingDmTxbx.Text, "FbDmRegEx"))
+                IsDmValidated = true;
+            else
+                IsDmValidated = false;
         }
 
         private void ResetForm()
@@ -70,7 +80,7 @@ namespace LTCTraceWPF
 
         private void FormValidator()
         {
-            if (housingDmTxbx.Text.Length > 0 &&  float.Parse(leakTestTxbx.Text) < 5 && float.Parse(leakTestTxbx.Text) > 0)
+            if (IsDmValidated == true &&  float.Parse(leakTestTxbx.Text) < 5 && float.Parse(leakTestTxbx.Text) > 0)
             {
                 AllFieldsValidated = true;
             }
