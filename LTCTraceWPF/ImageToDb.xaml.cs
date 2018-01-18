@@ -21,88 +21,63 @@ namespace LTCTraceWPF
     /// <summary>
     /// Interaction logic for ImageToDb.xaml
     /// Showing the last made image in a separate window and option to upload it to the database or discard
+    /// saving the image on the hard drive then after closing this window the caller can look into 
+    /// the harddrive and save the appropiaet image batch to the database
+    /// this window needs the following inputs - nothing?
+    /// calling this frame to confirm the save of the image
+    /// image saved on the hardware
     /// </summary>
     public partial class ImageToDb : Window
     {
         public string FilePathStr { get; set; } = "";
 
-        public string DataMatrix { get; set; } = "";
-
-        public string TableName { get; set; } = "";
-
-        public int NumOfPic { get; set; } = 0;
-        
         public string constr { get; set; } = @ConfigurationManager.ConnectionStrings["LTCTrace.DBConnectionString"].ConnectionString;
 
 
+        //BitmapImage image = new BitmapImage();
+        //image.BeginInit();
+        //    image.CacheOption = BitmapCacheOption.OnLoad;
+        //    image.UriSource = new Uri(FilePathStr);
+        //image.EndInit();
+
         public ImageToDb()
         {
+            ShowImage();
+
         }
-        public ImageToDb(string filePathName, string dataMatrix, string tableName, int numOfPic)
+        public ImageToDb(string filePathName)
         {
+            Loaded += (sender, e) => MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
             InitializeComponent();
             FilePathStr = filePathName;
-            DataMatrix = dataMatrix;
-            TableName = tableName;
-            NumOfPic = numOfPic;
             camApp.NumOfPics = 0 ;
             ShowImage();
         }
 
         private void ShowImage()
         {
-            image.Source = new BitmapImage(new Uri(FilePathStr));
+            //image.Source = new BitmapImage(new Uri(FilePathStr));
+            BitmapImage image = new BitmapImage();
+            image.BeginInit();
+            image.CacheOption = BitmapCacheOption.OnLoad;
+            image.UriSource = new Uri(FilePathStr);
+            image.EndInit();
+            img.Source = image;
         }
 
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
-            InsertImageData();
-        }
-
-        private void InsertImageData()
-        {
-            try
-            {
-                if (FilePathStr != "")
-                {
-                    //Initialize a file stream to read the image file
-                    FileStream fs = new FileStream(FilePathStr, FileMode.Open, FileAccess.Read);
-
-                    //Initialize a byte array with size of stream
-                    byte[] imgByteArr = new byte[fs.Length];
-
-                    //Read data from the file stream and put into the byte array
-                    fs.Read(imgByteArr, 0, Convert.ToInt32(fs.Length));
-
-                    //Close a file stream
-                    fs.Close();
-
-                    using (NpgsqlConnection conn = new NpgsqlConnection(constr))
-                    {
-                        conn.Open();
-                        string sql = "insert into picturetable(photo) values(@img)";
-                        using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conn))
-                        {
-                            //Pass byte array into database
-                            cmd.Parameters.Add(new NpgsqlParameter("img", imgByteArr));
-                            int result = cmd.ExecuteNonQuery();
-                            if (result == 1)
-                            {
-                                MessageBox.Show("Kép elmentve");
-                            }
-                        }
-                        conn.Close();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            this.Close();
         }
 
         private void MainMenuBtn_Click(object sender, RoutedEventArgs e)
         {
+            this.Close();
+        }
+
+        private void deleteImgBtn_Click(object sender, RoutedEventArgs e)
+        {
+            File.Delete(FilePathStr);
             this.Close();
         }
     }

@@ -58,7 +58,8 @@
                          Margin="30,15"
                          IsTabStop="True"
                          TabIndex="0"
-                         KeyUp="OnKeyUpEvent" ></TextBox>
+                         KeyUp="OnKeyUpEvent"
+                         LostFocus="FbDmTxbx_LostFocus"></TextBox>
                 <Button x:Name="WebCamLaunchBtn"
                         Grid.Row="3" 
                         Grid.Column="1" 
@@ -69,20 +70,6 @@
                         Click="WebCamLaunchClick"
                         KeyUp="OnKeyUpEvent" >
                     Kamera indítása</Button>
-                <TextBlock x:Name="Chkbx2ErrLbl"
-                         Grid.Row="2"
-                         Grid.Column="2"
-                         FontSize="25"
-                         VerticalAlignment="Center">
-                </TextBlock>
-                <TextBlock x:Name="CamErrLbl"
-                         Grid.Row="3"
-                         Grid.Column="2"
-                         FontSize="25"
-                         VerticalAlignment="Center">
-                    
-                </TextBlock>
-
             </Grid>
         </StackPanel>
 

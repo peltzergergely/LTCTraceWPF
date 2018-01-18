@@ -29,9 +29,6 @@
                    Background="#006064" 
                    Foreground="white"/>
         </StackPanel>
-
-
-
         <Button x:Name="MainMenuBtn" 
                 HorizontalAlignment="Left" 
                 Margin="40" 
@@ -49,39 +46,68 @@
                            HorizontalAlignment="Left"
                            FontFamily="Segoe MDL2 Assets"
                            FontSize="48" 
-                           Padding="2" >&#xE8FC;</TextBlock>
+                           Padding="2" >&#xE72B;</TextBlock>
                 <TextBlock VerticalAlignment="Center" 
                            FontSize="25" 
-                           Padding="2">Bezár</TextBlock>
+                           Padding="2">Vissza</TextBlock>
             </StackPanel>
         </Button>
-
-        <Image x:Name="image"
-               Width="800"
-               Height="600"></Image>
-        
-        <Button x:Name="SaveBtn" 
-                HorizontalAlignment="Right"
-                Margin="40" 
-                VerticalAlignment="Bottom" 
-                Height="auto"
-                Width="auto" 
-                Background="#FDFDFD" 
-                BorderBrush="White"
-                Foreground="DarkSlateGray"
-                TabIndex="4" Click="SaveBtn_Click">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock VerticalAlignment="Center" 
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Border BorderThickness="2">
+                <Image x:Name="img"
+                    Width="800"
+                    Height="600"
+                    ></Image>
+            </Border>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="saveImgBtn" 
+                        HorizontalAlignment="Center"
+                        Margin="40" 
+                        VerticalAlignment="Bottom" 
+                        Height="auto"
+                        Width="auto" 
+                        Background="#53D999" 
+                        BorderBrush="White"
+                        Foreground="DarkSlateGray"
+                        TabIndex="0" Click="SaveBtn_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock VerticalAlignment="Center" 
+                               Margin="5" 
+                               HorizontalAlignment="Left" 
+                               FontFamily="Segoe MDL2 Assets" 
+                               FontSize="48" 
+                               Padding="2" >&#xE74E;</TextBlock>
+                        <TextBlock VerticalAlignment="Center" 
+                               HorizontalAlignment="Right" 
+                               FontSize="25" 
+                               Padding="2">Mentés</TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button x:Name="deleteImgBtn" 
+                        HorizontalAlignment="Center"
+                        Margin="40" 
+                        VerticalAlignment="Bottom" 
+                        Height="auto"
+                        Width="auto" 
+                        Background="#FB99A2" 
+                        BorderBrush="White"
+                        Foreground="DarkSlateGray"
+                        TabIndex="1" 
+                        Click="deleteImgBtn_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock VerticalAlignment="Center" 
                            Margin="5" 
                            HorizontalAlignment="Left" 
                            FontFamily="Segoe MDL2 Assets" 
                            FontSize="48" 
-                           Padding="2" >&#xE74E;</TextBlock>
-                <TextBlock VerticalAlignment="Center" 
+                           Padding="2" >&#xE711;</TextBlock>
+                        <TextBlock VerticalAlignment="Center" 
                            HorizontalAlignment="Right" 
                            FontSize="25" 
-                           Padding="2">Mentés</TextBlock>
+                           Padding="2">Elvetés</TextBlock>
+                    </StackPanel>
+                </Button>
             </StackPanel>
-        </Button>
+        </StackPanel>
     </Grid>
 </Window>

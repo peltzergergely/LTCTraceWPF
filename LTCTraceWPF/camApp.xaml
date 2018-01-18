@@ -44,7 +44,7 @@
                     Width="800"
                     Height="600"
                     FrameSize="800, 600" 
-                    ImageDirectory="C:\WebcamSnapshots"
+                    ImageDirectory="C:\TraceImages"
                     VideoDevice="{Binding SelectedItem, ElementName=VidDevices}" />
 
                 <Grid Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top">
@@ -64,7 +64,9 @@
                               Width="210" Height="24"
                               ItemsSource="{Binding VideoDevices}"
                               DisplayMemberPath="Name"
-                              SelectedIndex="0"/>
+                              SelectedIndex="0"
+                              IsTabStop="False"
+                              IsEnabled="False"/>
                     
                 </Grid>
                 <!--
@@ -117,7 +119,8 @@
                 Background="#FDFDFD" 
                 BorderBrush="White" 
                 Foreground="DarkSlateGray" 
-                KeyboardNavigation.IsTabStop="False">
+                KeyboardNavigation.IsTabStop="True"
+                TabIndex="1">
             <StackPanel Orientation="Horizontal">
                 <TextBlock VerticalAlignment="Center" 
                            Margin="5" 
