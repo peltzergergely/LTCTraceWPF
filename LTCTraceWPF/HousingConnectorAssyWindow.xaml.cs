@@ -12,7 +12,7 @@ namespace LTCTraceWPF
     /// </summary>
     public partial class HousingConnectorAssyWindow : Window
     {
-        public bool IsDmValidated { get; set; } = false;
+        public bool IsFbDmValidated { get; set; } = false;
 
         public bool AllFieldsValidated { get; set; } = false;
 
@@ -36,7 +36,7 @@ namespace LTCTraceWPF
                 return;
             }
 
-            if (e.Key == Key.Enter && HousingDmTxbx.Text.Length > 0)
+            if (e.Key == Key.Enter && FbDmTxbx.Text.Length > 0)
             {
                 TraversalRequest tRequest = new TraversalRequest(FocusNavigationDirection.Next);
                 UIElement keyboardFocus = Keyboard.FocusedElement as UIElement;
@@ -59,7 +59,7 @@ namespace LTCTraceWPF
 
         private void FormValidator()
         {
-            if (IsDmValidated == true && screwChkbx.IsChecked == true)
+            if (IsFbDmValidated == true && screwChkbx.IsChecked == true)
             {
                 AllFieldsValidated = true;
             }
@@ -77,19 +77,19 @@ namespace LTCTraceWPF
 
         private void DmValidator()
         {
-            if (RegexValidation(HousingDmTxbx.Text, "HousingDmRegEx"))
-                IsDmValidated = true;
+            if (RegexValidation(FbDmTxbx.Text, "FbDmRegEx"))
+                IsFbDmValidated = true;
             else
-                IsDmValidated = false;
+                IsFbDmValidated = false;
         }
 
         private void ResetForm()
         {
-            IsDmValidated = false;
+            IsFbDmValidated = false;
             AllFieldsValidated = false;
-            HousingDmTxbx.Text = "";
+            FbDmTxbx.Text = "";
             screwChkbx.IsChecked = false;
-            HousingDmTxbx.Focus();
+            FbDmTxbx.Focus();
         }
 
         private void CallMessageForm(string msgToShow)
@@ -99,8 +99,6 @@ namespace LTCTraceWPF
             msgWindow.Show();
             msgWindow.Activate();
         }
-
-        //have to do precheck but needs a generator first
 
         private void DbInsert(string table) //DB insert
         {
@@ -112,9 +110,9 @@ namespace LTCTraceWPF
                 DateTime UploadMoment = DateTime.Now;
                 conn.Open();
                 // building SQL query
-                var cmd = new NpgsqlCommand("INSERT INTO " + table + " (housing_dm, pc_name, started_on, saved_on) " +
-                    "VALUES(:housing_dm, :pc_name, :started_on, :saved_on)", conn);
-                cmd.Parameters.Add(new NpgsqlParameter("housing_dm", HousingDmTxbx.Text));
+                var cmd = new NpgsqlCommand("INSERT INTO " + table + " (fb_dm, pc_name, started_on, saved_on) " +
+                    "VALUES(:fb_dm, :pc_name, :started_on, :saved_on)", conn);
+                cmd.Parameters.Add(new NpgsqlParameter("fb_dm", FbDmTxbx.Text));
                 cmd.Parameters.Add(new NpgsqlParameter("pc_name", System.Environment.MachineName));
                 cmd.Parameters.Add(new NpgsqlParameter("started_on", StartedOn));
                 cmd.Parameters.Add(new NpgsqlParameter("saved_on", DateTime.Now));
@@ -134,7 +132,7 @@ namespace LTCTraceWPF
         {
             if (AllFieldsValidated)
             {
-                DbInsert("housing_connector_assy");
+                DbInsert("fb_acdc_assy");
             }
         }
 

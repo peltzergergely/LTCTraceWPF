@@ -57,12 +57,21 @@ namespace LTCTraceWPF
         private void ShowImage()
         {
             //image.Source = new BitmapImage(new Uri(FilePathStr));
-            BitmapImage image = new BitmapImage();
-            image.BeginInit();
-            image.CacheOption = BitmapCacheOption.OnLoad;
-            image.UriSource = new Uri(FilePathStr);
-            image.EndInit();
-            img.Source = image;
+            LoadBitmapImage(FilePathStr);
+        }
+
+        public static BitmapImage LoadBitmapImage(string fileName)
+        {
+            using (var stream = new FileStream(fileName, FileMode.Open))
+            {
+                var bitmapImage = new BitmapImage();
+                bitmapImage.BeginInit();
+                bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
+                bitmapImage.StreamSource = stream;
+                bitmapImage.EndInit();
+                bitmapImage.Freeze();
+                return bitmapImage;
+            }
         }
 
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
@@ -77,8 +86,7 @@ namespace LTCTraceWPF
 
         private void deleteImgBtn_Click(object sender, RoutedEventArgs e)
         {
-            File.Delete(FilePathStr);
-            this.Close();
+            File.Delete(FilePathStr);    
         }
     }
 }

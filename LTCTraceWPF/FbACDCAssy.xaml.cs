@@ -12,7 +12,7 @@ namespace LTCTraceWPF
     /// </summary>
     public partial class FbACDCAssy : Window
     {
-        public bool IsDmValidated { get; set; } = false;
+        public bool IsFbDmValidated { get; set; } = false;
 
         public bool AllFieldsValidated { get; set; } = false;
 
@@ -59,7 +59,7 @@ namespace LTCTraceWPF
 
         private void FormValidator()
         {
-            if (IsDmValidated == true && screwChkbx.IsChecked == true)
+            if (IsFbDmValidated == true && screwChkbx.IsChecked == true)
             {
                 AllFieldsValidated = true;
             }
@@ -78,14 +78,14 @@ namespace LTCTraceWPF
         private void DmValidator()
         {
             if (RegexValidation(FbDmTxbx.Text, "FbDmRegEx"))
-                IsDmValidated = true;
+                IsFbDmValidated = true;
             else
-                IsDmValidated = false;
+                IsFbDmValidated = false;
         }
 
         private void ResetForm()
         {
-            IsDmValidated = false;
+            IsFbDmValidated = false;
             AllFieldsValidated = false;
             FbDmTxbx.Text = "";
             screwChkbx.IsChecked = false;

@@ -14,7 +14,7 @@ namespace LTCTraceWPF
     {
         public bool AllFieldsValidated { get; set; } = false;
 
-        public bool IsDmValidated { get; set; } = false;
+        public bool IsMbDmValidated { get; set; } = false;
 
         public DateTime? StartedOn { get; set; } = null;
 
@@ -59,10 +59,14 @@ namespace LTCTraceWPF
 
         private void FormValidator()
         {
-            if (IsDmValidated == true && screwChkbx.IsChecked == true)
+            if (IsMbDmValidated == true && screwChkbx.IsChecked == true)
+            {
                 AllFieldsValidated = true;
+            }
             else
+            {
                 CallMessageForm("Hibás kitöltés");
+            }
         }
 
         public bool RegexValidation(string dataToValidate, string datafieldName)
@@ -74,14 +78,14 @@ namespace LTCTraceWPF
         private void DmValidator()
         {
             if (RegexValidation(MbDmTxbx.Text, "MbDmRegEx"))
-                IsDmValidated = true;
+                IsMbDmValidated = true;
             else
-                IsDmValidated = false;
+                IsMbDmValidated = false;
         }
 
         private void ResetForm()
         {
-            IsDmValidated = false;
+            IsMbDmValidated = false;
             AllFieldsValidated = false;
             MbDmTxbx.Text = "";
             screwChkbx.IsChecked = false;

@@ -234,10 +234,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PottingWindow.xaml">
+    <None Include="PottingWindow">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
+    </None>
     <Page Include="Resources\Icons.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -261,7 +261,7 @@
       <DependentUpon>MessageForm.xaml</DependentUpon>
     </Compile>
     <Compile Include="PottingWindow.xaml.cs">
-      <DependentUpon>PottingWindow.xaml</DependentUpon>
+      <DependentUpon>PottingWindow</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
